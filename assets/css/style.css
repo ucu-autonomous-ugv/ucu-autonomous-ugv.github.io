@@ -18,6 +18,10 @@
   padding: 0;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   font-family: "Fira Sans", "Segoe UI", sans-serif;
   color: var(--ink);
@@ -67,6 +71,7 @@ img {
   padding: 18px 0;
   gap: 20px;
   flex-wrap: wrap;
+  min-height: 56px;
 }
 
 .brand {
@@ -320,7 +325,6 @@ img {
 .page-hero {
   padding: 70px 0 40px;
   background: #ffffff;
-  border-bottom: 1px solid var(--border);
 }
 
 .page-hero h1 {
@@ -403,6 +407,8 @@ img {
   color: #f5f4f2;
   padding: 50px 0 40px;
   margin-top: 40px;
+  --footer-accent: #ffffff;
+  --footer-accent-hover: #d6d6d6;
 }
 
 .footer-grid {
@@ -415,6 +421,16 @@ img {
   margin-bottom: 12px;
   font-size: 1rem;
   letter-spacing: 0.05em;
+  color: var(--footer-accent);
+}
+
+.site-footer a {
+  color: var(--footer-accent);
+  transition: color 0.25s ease;
+}
+
+.site-footer a:hover {
+  color: var(--footer-accent-hover);
 }
 
 .site-footer ul {
