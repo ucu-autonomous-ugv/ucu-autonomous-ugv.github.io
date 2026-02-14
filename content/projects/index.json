@@ -10,5 +10,65 @@
     "title": "Resilient comms for field robots",
     "meta": "Edge coordination with intermittent links",
     "kind": "Project"
+  },
+  {
+    "slug": "adaptive-traction",
+    "title": "Adaptive traction control",
+    "meta": "Slip-aware control for mixed terrain",
+    "kind": "Project"
+  },
+  {
+    "slug": "convoy-routing",
+    "title": "Convoy routing under constraints",
+    "meta": "Route selection with energy and risk limits",
+    "kind": "Project"
+  },
+  {
+    "slug": "degraded-vision",
+    "title": "Perception in degraded vision",
+    "meta": "Robust sensing in dust, rain, and glare",
+    "kind": "Project"
+  },
+  {
+    "slug": "energy-forecasting",
+    "title": "Mission energy forecasting",
+    "meta": "Predictive models for endurance planning",
+    "kind": "Project"
+  },
+  {
+    "slug": "ground-swarm-mapping",
+    "title": "Ground swarm mapping",
+    "meta": "Distributed mapping for UGV teams",
+    "kind": "Project"
+  },
+  {
+    "slug": "lidar-fusion",
+    "title": "Multi-sensor lidar fusion",
+    "meta": "Fusing lidar, radar, and vision",
+    "kind": "Project"
+  },
+  {
+    "slug": "multi-robot-ops",
+    "title": "Multi-robot field operations",
+    "meta": "Coordination and task allocation",
+    "kind": "Project"
+  },
+  {
+    "slug": "rugged-navigation",
+    "title": "Ruggedized navigation stack",
+    "meta": "Fault-tolerant localization",
+    "kind": "Project"
+  },
+  {
+    "slug": "terrain-classification",
+    "title": "Terrain classification at scale",
+    "meta": "Learning terrain types from on-board sensing",
+    "kind": "Project"
+  },
+  {
+    "slug": "ugv-telemetry",
+    "title": "UGV telemetry and health",
+    "meta": "Fleet monitoring and diagnostics",
+    "kind": "Project"
   }
 ]
