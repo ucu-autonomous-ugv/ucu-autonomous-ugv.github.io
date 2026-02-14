@@ -15,7 +15,7 @@ const renderList = async (section) => {
     return;
   }
 
-  const response = await fetch(`content/${section}/index.json`);
+  const response = await fetch(`/content/${section}/index.json`);
   const items = await response.json();
 
   const params = new URLSearchParams(window.location.search);
@@ -31,18 +31,23 @@ const renderList = async (section) => {
   const cards = await Promise.all(
     pageItems.map(async (item) => {
       const entryResponse = await fetch(
-        `content/${section}/${item.slug}.entry.md`
+        `/content/${section}/${item.slug}.entry.md`
       );
       const entryText = await entryResponse.text();
 
       const card = document.createElement("article");
       card.className = "list-card";
       card.innerHTML = `
-        <span class="tag">${item.kind}</span>
-        <h3>${item.title}</h3>
-        <p class="lead">${item.meta}</p>
-        <div>${marked.parse(entryText)}</div>
-        <a class="btn ghost" href="/item/?section=${section}&slug=${item.slug}">Read more</a>
+        <div class="list-media" aria-hidden="true">
+          <span>Image placeholder</span>
+        </div>
+        <div class="list-body">
+          <span class="tag">${item.kind}</span>
+          <h3>${item.title}</h3>
+          <p class="lead">${item.meta}</p>
+          <div class="list-excerpt">${marked.parse(entryText)}</div>
+          <a class="btn ghost btn-slim btn-animated list-cta" href="/item/?section=${section}&slug=${item.slug}">Read more</a>
+        </div>
       `;
 
       return card;
@@ -92,7 +97,7 @@ const renderItem = async () => {
     return;
   }
 
-  const listResponse = await fetch(`content/${section}/index.json`);
+  const listResponse = await fetch(`/content/${section}/index.json`);
   const items = await listResponse.json();
   const item = items.find((entry) => entry.slug === slug);
 
@@ -100,7 +105,7 @@ const renderItem = async () => {
     return;
   }
 
-  const pageResponse = await fetch(`content/${section}/${slug}.page.md`);
+  const pageResponse = await fetch(`/content/${section}/${slug}.page.md`);
   const pageText = await pageResponse.text();
 
   const titleEl = document.querySelector("[data-item-title]");

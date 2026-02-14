@@ -340,13 +340,16 @@ img {
 }
 
 .list-card {
-  background: var(--surface);
-  border-radius: var(--radius);
-  padding: 22px;
+  background: transparent;
+  border-radius: 0;
+  padding: 16px;
   border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 20px rgba(11, 18, 26, 0.05);
   display: grid;
-  gap: 12px;
+  grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  --list-media-height: 160px;
 }
 
 .list-card h3 {
@@ -362,6 +365,60 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: var(--accent-strong);
+}
+
+.list-media {
+  height: var(--list-media-height);
+  border: 1px dashed #d3d7dc;
+  background: linear-gradient(135deg, #edf0f2, #e6eaee);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: 0;
+}
+
+.list-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: var(--list-media-height);
+  overflow: hidden;
+}
+
+.list-body h3,
+.list-body .lead {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+
+.list-body h3 {
+  -webkit-line-clamp: 2;
+}
+
+.list-body .lead {
+  -webkit-line-clamp: 2;
+}
+
+.list-excerpt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.list-excerpt p {
+  margin: 0;
+}
+
+.list-cta {
+  align-self: flex-end;
+  margin-top: auto;
 }
 
 .content {
@@ -459,11 +516,12 @@ img {
 
 .page-link {
   border: 1px solid var(--border);
-  padding: 8px 12px;
-  border-radius: 999px;
+  padding: 6px 10px;
+  border-radius: 8px;
   background: var(--surface);
   color: var(--ink);
   font-weight: 500;
+  font-size: 0.82rem;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
@@ -476,6 +534,29 @@ img {
   color: #ffffff;
   background: var(--accent-strong);
   border-color: var(--accent-strong);
+}
+
+.btn.btn-slim {
+  width: 96px;
+  height: 30px;
+  padding: 0;
+  font-size: 0.76rem;
+  border-radius: 8px;
+  letter-spacing: 0.02em;
+}
+
+.btn.btn-animated {
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+@media (max-width: 720px) {
+  .list-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .list-body {
+    height: auto;
+  }
 }
 
 @media (max-width: 760px) {
