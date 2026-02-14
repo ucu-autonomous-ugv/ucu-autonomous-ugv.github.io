@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "terrain-aware-planning",
+    "title": "Terrain-aware planning for UGVs",
+    "meta": "Multi-modal mapping for dynamic terrain",
+    "kind": "Project"
+  },
+  {
+    "slug": "resilient-comms",
+    "title": "Resilient comms for field robots",
+    "meta": "Edge coordination with intermittent links",
+    "kind": "Project"
+  }
+]
