@@ -35,19 +35,21 @@ const renderList = async (section) => {
       );
       const entryText = await entryResponse.text();
 
-      const card = document.createElement("article");
+      const card = document.createElement("a");
       card.className = "list-card";
+      card.href = `/item/?section=${section}&slug=${item.slug}`;
       card.innerHTML = `
-        <div class="list-media" aria-hidden="true">
-          <span>Image placeholder</span>
+        <div class="list-card-header">
+          <span class="resource-tag list-tag">${item.kind}</span>
+          <h3>
+            ${item.title}
+            <svg class="external-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.97 7 1.96 2 6.963-7 3.993 4v-10z"/>
+            </svg>
+          </h3>
         </div>
-        <div class="list-body">
-          <span class="tag">${item.kind}</span>
-          <h3>${item.title}</h3>
-          <p class="lead">${item.meta}</p>
-          <div class="list-excerpt">${marked.parse(entryText)}</div>
-          <a class="btn ghost btn-slim btn-animated list-cta" href="/item/?section=${section}&slug=${item.slug}">Read more</a>
-        </div>
+        <p class="list-meta">${item.meta}</p>
+        <div class="list-excerpt">${marked.parse(entryText)}</div>
       `;
 
       return card;
