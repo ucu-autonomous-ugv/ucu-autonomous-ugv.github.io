@@ -3,7 +3,8 @@
     "slug": "welcome-to-the-ugv-club",
     "title": "Welcome to the UCU Autonomous UGV Club!",
     "meta": "June 12, 2026 • By Admin",
-    "kind": "News"
+    "kind": "News",
+    "spotlight": true
   },
   {
     "slug": "lidar-sensors-setup",

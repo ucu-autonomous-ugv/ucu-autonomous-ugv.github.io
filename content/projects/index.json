@@ -3,7 +3,8 @@
     "slug": "terrain-aware-planning",
     "title": "Terrain-aware planning for UGVs",
     "meta": "Multi-modal mapping for dynamic terrain",
-    "kind": "Project"
+    "kind": "Project",
+    "spotlight": true
   },
   {
     "slug": "resilient-comms",
@@ -45,7 +46,8 @@
     "slug": "lidar-fusion",
     "title": "Multi-sensor lidar fusion",
     "meta": "Fusing lidar, radar, and vision",
-    "kind": "Project"
+    "kind": "Project",
+    "spotlight": true
   },
   {
     "slug": "multi-robot-ops",

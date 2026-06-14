@@ -122,7 +122,7 @@ const renderItem = async () => {
   if (contentEl) contentEl.innerHTML = marked.parse(pageText);
   if (backLink) backLink.href = `/${section}/`;
 
-  document.title = `${item.title} | UCU Autonomous UGV Lab`;
+  document.title = `${item.title} | UCU UGV Club`;
 };
 
 renderList("projects");
