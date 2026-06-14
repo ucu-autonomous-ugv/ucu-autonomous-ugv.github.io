@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "welcome-to-the-ugv-club",
+    "title": "Welcome to the UCU Autonomous UGV Club!",
+    "meta": "June 12, 2026 • By Admin",
+    "kind": "News"
+  },
+  {
+    "slug": "lidar-sensors-setup",
+    "title": "Configuring 3D LiDAR Sensors on ROS 2",
+    "meta": "June 5, 2026 • By Tech Team",
+    "kind": "Tutorial"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "title": "ROS 2 UGV Navigation Stack",
+    "category": "Software & Code",
+    "description": "Our custom navigation and localization package tailored for outdoor off-road UGV platforms, built on top of ROS 2 Nav2 and Robot Localization.",
+    "url": "https://github.com/ucu-autonomous-ugv/navigation_stack",
+    "tags": ["ROS 2", "C++", "Nav2", "Open Source"]
+  },
+  {
+    "title": "Lviv Off-Road UGV Dataset",
+    "category": "Research Datasets",
+    "description": "A multi-sensor dataset containing stereo camera images, 3D LiDAR scans, IMU readings, and RTK-GPS trajectories across mixed off-road terrains.",
+    "url": "https://github.com/ucu-autonomous-ugv/lviv_ugv_dataset",
+    "tags": ["Dataset", "LiDAR", "Stereo Camera", "Off-road"]
+  },
+  {
+    "title": "UGV Hardware Build Guide",
+    "category": "Hardware & CAD",
+    "description": "Detailed mechanical assembly steps, electrical wiring schematics, and sensor integration brackets/mounts for our reference UGV chassis.",
+    "url": "https://github.com/ucu-autonomous-ugv/hardware_build_guide",
+    "tags": ["CAD", "Hardware", "Wiring", "3D Printing"]
+  },
+  {
+    "title": "Sensor Calibration Toolbox",
+    "category": "Software & Code",
+    "description": "An easy-to-use Python and C++ toolbox for spatial and temporal calibration of camera-to-LiDAR and LiDAR-to-IMU setups.",
+    "url": "https://github.com/ucu-autonomous-ugv/sensor_calibration_toolbox",
+    "tags": ["Calibration", "Python", "Computer Vision"]
+  },
+  {
+    "title": "Introduction to ROS 2 & Gazebo",
+    "category": "Tutorials & Guides",
+    "description": "An onboarding tutorial slide-deck and repository for students new to ROS 2 development and vehicle simulation in Gazebo.",
+    "url": "https://github.com/ucu-autonomous-ugv/ros2_introduction_tutorial",
+    "tags": ["Tutorial", "ROS 2", "Gazebo", "Simulation"]
+  }
+]

@@ -1,0 +1,81 @@
+[
+  {
+    "name": "Dr. Taras Shevchenko",
+    "role": "Lead Faculty Advisor",
+    "category": "noclas",
+    "avatar": "",
+    "bio": "Specializes in computer vision and guidance algorithms for outdoor robotic vehicles.",
+    "links": {
+      "github": "https://github.com",
+      "linkedin": "https://linkedin.com",
+      "website": "https://example.edu"
+    }
+  },
+  {
+    "name": "Yaroslava Mudra",
+    "role": "Lab Coordinator & Lead Engineer",
+    "category": "noclas",
+    "avatar": "",
+    "bio": "Manages hardware operations and system integration for UGV platforms.",
+    "links": {
+      "github": "https://github.com",
+      "linkedin": "https://linkedin.com"
+    }
+  },
+  {
+    "name": "Andriy Shevchenko",
+    "role": "BSc Student",
+    "category": "student",
+    "classYear": "Class of 2026",
+    "avatar": "",
+    "bio": "Working on SLAM validation and sensor fusion calibrations.",
+    "links": {
+      "github": "https://github.com"
+    }
+  },
+  {
+    "name": "Lesya Ukrainka",
+    "role": "MSc Candidate",
+    "category": "student",
+    "classYear": "Class of 2027",
+    "avatar": "",
+    "bio": "Researching terrain classification algorithms using deep neural networks.",
+    "links": {
+      "github": "https://github.com",
+      "linkedin": "https://linkedin.com"
+    }
+  },
+  {
+    "name": "Danylo Halytskyi",
+    "role": "MSc Student",
+    "category": "student",
+    "classYear": "Class of 2026",
+    "avatar": "",
+    "bio": "Focused on model predictive control and slip dynamics on clay soil.",
+    "links": {
+      "github": "https://github.com",
+      "linkedin": "https://linkedin.com"
+    }
+  },
+  {
+    "name": "Ivan Mazepa",
+    "role": "BSc Graduate",
+    "category": "alumni",
+    "classYear": "Class of 2024",
+    "currentPosition": "Software Engineer at Autonomous Systems Inc.",
+    "links": {
+      "github": "https://github.com",
+      "linkedin": "https://linkedin.com"
+    }
+  },
+  {
+    "name": "Olha Kniahynia",
+    "role": "MSc Graduate",
+    "category": "alumni",
+    "classYear": "Class of 2025",
+    "currentPosition": "Robotics Researcher at Technical University of Munich",
+    "links": {
+      "linkedin": "https://linkedin.com"
+    }
+  }
+]

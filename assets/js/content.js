@@ -126,4 +126,5 @@ const renderItem = async () => {
 renderList("projects");
 renderList("theses");
 renderList("publications");
+renderList("blog");
 renderItem();

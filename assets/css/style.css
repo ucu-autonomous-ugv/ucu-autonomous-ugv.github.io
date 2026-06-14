@@ -650,3 +650,239 @@ img {
     padding-top: 40px;
   }
 }
+
+/* People Component Styles */
+.people-section-wrap {
+  margin-bottom: 56px;
+}
+.people-section-wrap:last-child {
+  margin-bottom: 0;
+}
+.people-section-title {
+  font-family: "Arsenal", "Georgia", serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin-bottom: 24px;
+  padding-left: 12px;
+  border-left: 4px solid var(--accent);
+}
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.people-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.people-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(11, 18, 26, 0.12);
+}
+.people-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.people-avatar, 
+.people-avatar-placeholder {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+}
+.people-avatar-placeholder {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: "Arsenal", "Georgia", serif;
+  font-size: 1.25rem;
+}
+.people-card-identity h3 {
+  font-family: "Arsenal", "Georgia", serif;
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.2;
+}
+.people-role {
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-weight: 500;
+  margin: 2px 0 0 0;
+}
+.people-class {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-weight: 700;
+  margin: 2px 0 0 0;
+}
+.people-card-body {
+  margin-top: 16px;
+  flex: 1;
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+.people-card-footer {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+.people-card-footer a {
+  color: var(--muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.people-card-footer a:hover {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+.social-icon {
+  display: block;
+}
+
+/* Alumni List Styles */
+.alumni-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.alumni-year-header {
+  font-family: "Arsenal", "Georgia", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 4px;
+  margin-top: 16px;
+}
+.alumni-year-header:first-child {
+  margin-top: 0;
+}
+.alumni-item {
+  font-size: 0.95rem;
+  color: var(--ink);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.alumni-name {
+  font-weight: 700;
+}
+.alumni-role {
+  color: var(--muted);
+}
+.alumni-links-wrap {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.alumni-link {
+  color: var(--accent);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+.alumni-link:hover {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+/* Resources Component Styles */
+.resources-section {
+  margin-bottom: 56px;
+}
+.resources-section:last-child {
+  margin-bottom: 0;
+}
+.resources-category-title {
+  font-family: "Arsenal", "Georgia", serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin-bottom: 24px;
+  padding-left: 12px;
+  border-left: 4px solid var(--accent);
+}
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+.resource-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(11, 18, 26, 0.12);
+  border-color: var(--accent);
+}
+.resource-card-header h3 {
+  font-family: "Arsenal", "Georgia", serif;
+  font-size: 1.3rem;
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 12px 0;
+  line-height: 1.25;
+}
+.resource-card-header .external-icon {
+  color: var(--muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+.resource-card:hover .external-icon {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+.resource-desc {
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.5;
+  flex: 1;
+  margin: 0 0 18px 0;
+}
+.resource-tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.resource-tag {
+  background: var(--sand);
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
