@@ -4,12 +4,14 @@ site-footer {
   display: block;
 }
 
+.site-main {
+  flex: 1;
+}
+
 /* Site Header */
 .site-header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
