@@ -4,7 +4,7 @@
     "role": "Faculty Advisor",
     "category": "noclas",
     "avatar": "https://github.com/OleksandrKosovan/oleksandrkosovan.github.io/blob/main/images/profile-photo.jpeg?raw=true",
-    "bio": "Todo",
+    "bio": "Head of UGV Club.",
     "links": {
       "github": "https://github.com/OleksandrKosovan",
       "linkedin": "https://www.linkedin.com/in/kosovan-oleksandr/",
@@ -16,7 +16,7 @@
     "role": "Technical Director",
     "category": "noclas",
     "avatar": "https://github.com/SlavkoPrytula/slavkoprytula.github.io/blob/main/assets/images/yaroslav_prytula.png?raw=true",
-    "bio": "Todo",
+    "bio": "Co-head of UGV Club.",
     "links": {
       "github": "https://github.com/SlavkoPrytula",
       "linkedin": "https://www.linkedin.com/in/yaroslav-prytula-3166471b0/",
@@ -28,8 +28,8 @@
     "role": "BSc Student",
     "category": "student",
     "classYear": "Class of 2027",
-    "avatar": "",
-    "bio": "Todo.",
+    "avatar": "https://avatars.githubusercontent.com/u/149298157?v=4",
+    "bio": "CS student working on SLAM.",
     "links": {
       "github": "https://github.com/n1n1n1q",
       "linkedin": "https://www.linkedin.com/in/basystyi/"
@@ -40,8 +40,8 @@
     "role": "BSc Student",
     "category": "student",
     "classYear": "Class of 2027",
-    "avatar": "",
-    "bio": "Todo.",
+    "avatar": "https://avatars.githubusercontent.com/u/89141571?v=4",
+    "bio": "CS student working on SLAM.",
     "links": {
       "github": "https://github.com/annastasyshyn",
       "linkedin": "https://www.linkedin.com/in/anna-stasyshyn-a76117327/"
