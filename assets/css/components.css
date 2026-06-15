@@ -1,6 +1,6 @@
 /* Page Hero Section */
 .page-hero {
-  padding: 70px 0 40px;
+  padding: 70px 0 16px;
   background: transparent;
 }
 
@@ -85,6 +85,10 @@
 
 .section {
   padding: 64px 0;
+}
+
+.page-hero + .section {
+  padding-top: 16px;
 }
 
 /* Image Grid */

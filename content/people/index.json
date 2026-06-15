@@ -1,7 +1,7 @@
 [
   {
     "name": "Oleksandr Kosovan",
-    "role": "Faculty Advisor",
+    "role": "AI Researcher",
     "category": "noclas",
     "avatar": "https://github.com/OleksandrKosovan/oleksandrkosovan.github.io/blob/main/images/profile-photo.jpeg?raw=true",
     "bio": "Head of UGV Club.",
@@ -13,7 +13,7 @@
   },
   {
     "name": "Yaroslav Prytula",
-    "role": "Technical Director",
+    "role": "PhD student, APPS",
     "category": "noclas",
     "avatar": "https://github.com/SlavkoPrytula/slavkoprytula.github.io/blob/main/assets/images/yaroslav_prytula.png?raw=true",
     "bio": "Co-head of UGV Club.",
@@ -67,6 +67,16 @@
     "bio": "Todo",
     "links": {
       "github": "https://github.com/yelgor"
+    }
+  },
+  {
+    "name": "Maksym Zhuk",
+    "role": "BSc Student",
+    "category": "student",
+    "classYear": "Class of 2027",
+    "bio": "Todo",
+    "links": {
+      "github": "https://github.com/Zhukowych"
     }
   },
   {
