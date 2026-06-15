@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Blog | UCU UGV Club</title>
+    <title>Research | UCU UGV Club</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,10 +20,10 @@
           UCU UGV Club
         </a>
         <nav class="site-nav">
-          <a href="/research/">Research</a>
+          <a class="active" href="/research/">Research</a>
           <a href="/people/">People</a>
           <a href="/resources/">Resources</a>
-          <a class="active" href="/blog/">Blog</a>
+          <a href="/blog/">Blog</a>
           <a href="/reach/">Reach us</a>
         </nav>
       </div>
@@ -32,17 +32,38 @@
     <main class="site-main">
       <section class="page-hero">
         <div class="container">
-          <p class="eyebrow">Lab updates & news</p>
-          <h1>Blog</h1>
+          <p class="eyebrow">Academic & Applied Portfolio</p>
+          <h1>Research</h1>
           <p class="lead">
-            Follow the latest updates, tutorials, and research milestones from our university ground vehicle club.
+            Explore our research initiatives, projects, student theses, and academic publications in autonomous vehicles.
           </p>
         </div>
       </section>
 
       <section class="section">
         <div class="container">
-          <div class="list-grid" data-section="blog"></div>
+          <div class="research-layout">
+            <aside class="research-sidebar">
+              <nav class="research-nav" aria-label="Research Categories">
+                <button class="research-nav-btn is-active" data-tab="all">
+                  All Research <span class="count" data-count="all">0</span>
+                </button>
+                <button class="research-nav-btn" data-tab="projects">
+                  Projects <span class="count" data-count="projects">0</span>
+                </button>
+                <button class="research-nav-btn" data-tab="theses">
+                  Theses <span class="count" data-count="theses">0</span>
+                </button>
+                <button class="research-nav-btn" data-tab="publications">
+                  Publications <span class="count" data-count="publications">0</span>
+                </button>
+              </nav>
+            </aside>
+
+            <div class="research-content-area">
+              <div class="list-grid" data-section="research"></div>
+            </div>
+          </div>
         </div>
       </section>
     </main>

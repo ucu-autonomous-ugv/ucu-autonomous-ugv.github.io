@@ -1,0 +1,212 @@
+[
+  {
+    "slug": "terrain-aware-planning",
+    "title": "Terrain-aware planning for UGVs",
+    "meta": "Multi-modal mapping for dynamic terrain",
+    "kind": "Project",
+    "tags": [
+      "Navigation",
+      "Planning",
+      "Active"
+    ],
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel leo non\nnunc molestie eleifend. Suspendisse potenti.",
+    "link": "",
+    "spotlight": true
+  },
+  {
+    "slug": "resilient-comms",
+    "title": "Resilient comms for field robots",
+    "meta": "Edge coordination with intermittent links",
+    "kind": "Project",
+    "tags": [
+      "Communications",
+      "Edge Coordination",
+      "Active"
+    ],
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mattis, odio\nsed porta efficitur, ipsum dui luctus dui, a ultricies elit lorem sit amet\nmetus.",
+    "link": ""
+  },
+  {
+    "slug": "adaptive-traction",
+    "title": "Adaptive traction control",
+    "meta": "Slip-aware control for mixed terrain",
+    "kind": "Project",
+    "tags": [
+      "Control",
+      "Traction",
+      "Active"
+    ],
+    "summary": "Slip-aware traction control for variable terrain and payloads.",
+    "link": ""
+  },
+  {
+    "slug": "convoy-routing",
+    "title": "Convoy routing under constraints",
+    "meta": "Route selection with energy and risk limits",
+    "kind": "Project",
+    "tags": [
+      "Routing",
+      "Planning",
+      "Finished"
+    ],
+    "summary": "Constraint-aware routing for multi-vehicle convoys.",
+    "link": ""
+  },
+  {
+    "slug": "degraded-vision",
+    "title": "Perception in degraded vision",
+    "meta": "Robust sensing in dust, rain, and glare",
+    "kind": "Project",
+    "tags": [
+      "Perception",
+      "Sensing",
+      "Active"
+    ],
+    "summary": "Robust perception pipelines for dust, rain, and glare.",
+    "link": ""
+  },
+  {
+    "slug": "energy-forecasting",
+    "title": "Mission energy forecasting",
+    "meta": "Predictive models for endurance planning",
+    "kind": "Project",
+    "tags": [
+      "Modeling",
+      "Planning",
+      "Finished"
+    ],
+    "summary": "Predictive energy modeling for long-range missions.",
+    "link": ""
+  },
+  {
+    "slug": "ground-swarm-mapping",
+    "title": "Ground swarm mapping",
+    "meta": "Distributed mapping for UGV teams",
+    "kind": "Project",
+    "tags": [
+      "Swarm",
+      "Mapping",
+      "Active"
+    ],
+    "summary": "Distributed mapping for ground swarm operations.",
+    "link": ""
+  },
+  {
+    "slug": "lidar-fusion",
+    "title": "Multi-sensor lidar fusion",
+    "meta": "Fusing lidar, radar, and vision",
+    "kind": "Project",
+    "tags": [
+      "Lidar",
+      "Sensing",
+      "Featured"
+    ],
+    "summary": "Fusing lidar, radar, and vision for robust perception.",
+    "link": "",
+    "spotlight": true
+  },
+  {
+    "slug": "multi-robot-ops",
+    "title": "Multi-robot field operations",
+    "meta": "Coordination and task allocation",
+    "kind": "Project",
+    "tags": [
+      "Coordination",
+      "Ops",
+      "Active"
+    ],
+    "summary": "Coordination and task allocation for UGV teams.",
+    "link": ""
+  },
+  {
+    "slug": "rugged-navigation",
+    "title": "Ruggedized navigation stack",
+    "meta": "Fault-tolerant localization",
+    "kind": "Project",
+    "tags": [
+      "Navigation",
+      "Localization",
+      "Active"
+    ],
+    "summary": "Fault-tolerant localization and navigation stack.",
+    "link": ""
+  },
+  {
+    "slug": "terrain-classification",
+    "title": "Terrain classification at scale",
+    "meta": "Learning terrain types from on-board sensing",
+    "kind": "Project",
+    "tags": [
+      "Sensing",
+      "Learning",
+      "Finished"
+    ],
+    "summary": "Learning terrain classes from on-board sensing.",
+    "link": ""
+  },
+  {
+    "slug": "ugv-telemetry",
+    "title": "UGV telemetry and health",
+    "meta": "Fleet monitoring and diagnostics",
+    "kind": "Project",
+    "tags": [
+      "Telemetry",
+      "Fleet",
+      "Active"
+    ],
+    "summary": "Fleet telemetry and health monitoring dashboards.",
+    "link": ""
+  },
+  {
+    "slug": "human-robot-collab",
+    "title": "Human-robot collaboration in field ops",
+    "meta": "MSc thesis, 2025",
+    "kind": "Thesis",
+    "tags": [
+      "MSc Thesis",
+      "HRI",
+      "Finished"
+    ],
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam\nmattis dolor, ut luctus turpis.",
+    "link": ""
+  },
+  {
+    "slug": "energy-aware-routing",
+    "title": "Energy-aware routing for long missions",
+    "meta": "BSc thesis, 2024",
+    "kind": "Thesis",
+    "tags": [
+      "BSc Thesis",
+      "Routing",
+      "Finished"
+    ],
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum\naliquam sagittis.",
+    "link": ""
+  },
+  {
+    "slug": "robust-perception",
+    "title": "Robust perception for dusty environments",
+    "meta": "Journal article, 2025",
+    "kind": "Publication",
+    "tags": [
+      "Journal",
+      "Perception",
+      "Sensing"
+    ],
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu sem eget\nmagna efficitur pretium.",
+    "link": "https://arxiv.org/abs/example1"
+  },
+  {
+    "slug": "swarm-ground",
+    "title": "Swarm coordination for ground fleets",
+    "meta": "Conference paper, 2024",
+    "kind": "Publication",
+    "tags": [
+      "Conference",
+      "Swarm",
+      "Coordination"
+    ],
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida\nultricies ipsum vitae consequat.",
+    "link": "https://arxiv.org/abs/example2"
+  }
+]
