@@ -1,81 +1,83 @@
 [
   {
-    "name": "Dr. Taras Shevchenko",
-    "role": "Lead Faculty Advisor",
+    "name": "Oleksandr Kosovan",
+    "role": "Faculty Advisor",
     "category": "noclas",
-    "avatar": "",
-    "bio": "Specializes in computer vision and guidance algorithms for outdoor robotic vehicles.",
+    "avatar": "https://github.com/OleksandrKosovan/oleksandrkosovan.github.io/blob/main/images/profile-photo.jpeg?raw=true",
+    "bio": "Todo",
     "links": {
-      "github": "https://github.com",
-      "linkedin": "https://linkedin.com",
-      "website": "https://example.edu"
+      "github": "https://github.com/OleksandrKosovan",
+      "linkedin": "https://www.linkedin.com/in/kosovan-oleksandr/",
+      "website": "https://oleksandrkosovan.github.io/"
     }
   },
   {
-    "name": "Yaroslava Mudra",
-    "role": "Lab Coordinator & Lead Engineer",
+    "name": "Yaroslav Prytula",
+    "role": "Technical Director",
     "category": "noclas",
-    "avatar": "",
-    "bio": "Manages hardware operations and system integration for UGV platforms.",
+    "avatar": "https://github.com/SlavkoPrytula/slavkoprytula.github.io/blob/main/assets/images/yaroslav_prytula.png?raw=true",
+    "bio": "Todo",
     "links": {
-      "github": "https://github.com",
-      "linkedin": "https://linkedin.com"
+      "github": "https://github.com/SlavkoPrytula",
+      "linkedin": "https://www.linkedin.com/in/yaroslav-prytula-3166471b0/",
+      "website": "https://slavkoprytula.github.io/about/"
     }
   },
   {
-    "name": "Andriy Shevchenko",
+    "name": "Oleh Basysti",
     "role": "BSc Student",
-    "category": "student",
-    "classYear": "Class of 2026",
-    "avatar": "",
-    "bio": "Working on SLAM validation and sensor fusion calibrations.",
-    "links": {
-      "github": "https://github.com"
-    }
-  },
-  {
-    "name": "Lesya Ukrainka",
-    "role": "MSc Candidate",
     "category": "student",
     "classYear": "Class of 2027",
     "avatar": "",
-    "bio": "Researching terrain classification algorithms using deep neural networks.",
+    "bio": "Todo.",
     "links": {
-      "github": "https://github.com",
-      "linkedin": "https://linkedin.com"
+      "github": "https://github.com/n1n1n1q",
+      "linkedin": "https://www.linkedin.com/in/basystyi/"
     }
   },
   {
-    "name": "Danylo Halytskyi",
-    "role": "MSc Student",
+    "name": "Anna Stasyshyn",
+    "role": "BSc Student",
     "category": "student",
-    "classYear": "Class of 2026",
+    "classYear": "Class of 2027",
     "avatar": "",
-    "bio": "Focused on model predictive control and slip dynamics on clay soil.",
+    "bio": "Todo.",
     "links": {
-      "github": "https://github.com",
-      "linkedin": "https://linkedin.com"
+      "github": "https://github.com/annastasyshyn",
+      "linkedin": "https://www.linkedin.com/in/anna-stasyshyn-a76117327/"
     }
   },
   {
-    "name": "Ivan Mazepa",
-    "role": "BSc Graduate",
-    "category": "alumni",
-    "classYear": "Class of 2024",
-    "currentPosition": "Software Engineer at Autonomous Systems Inc.",
+    "name": "Andriy Kryvyi",
+    "role": "BSc Student",
+    "category": "student",
+    "classYear": "Class of 2028",
+    "avatar": "",
+    "bio": "Todo",
     "links": {
-      "github": "https://github.com",
-      "linkedin": "https://linkedin.com"
+      "github": "https://github.com/draklowell",
+      "linkedin": "https://www.linkedin.com/in/andriy-kryvyi/"
     }
   },
   {
-    "name": "Olha Kniahynia",
+    "name": "Hordii Yeliseev",
+    "role": "BSc Student",
+    "category": "student",
+    "classYear": "Class of 2028",
+    "bio": "Todo",
+    "links": {
+      "github": "https://github.com/yelgor"
+    }
+  },
+  {
+    "name": "Place Holder",
     "role": "MSc Graduate",
     "category": "alumni",
     "classYear": "Class of 2025",
     "currentPosition": "Robotics Researcher at Technical University of Munich",
     "links": {
-      "linkedin": "https://linkedin.com"
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com/"
     }
   }
 ]
