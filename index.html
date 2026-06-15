@@ -1,78 +1,82 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>UCU UGV Club</title>
-    <link rel="stylesheet" href="/assets/css/style.css?v=2" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@300;400;500;600;700;800&family=Fira+Sans:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <site-header></site-header>
 
-    <main class="site-main home-main">
-      <section class="custom-herovideo" id="block-heroimage">
-        <div class="overlay"></div>
-        <video autoplay="autoplay" loop="loop" muted="" playsinline="" id="video">
-          <source src="/assets/video/banner.mp4" type="video/mp4" />
-        </video>
-        <div class="hero-text">
-          <p class="eyebrow">Research group</p>
-          <h1>Welcome to the<br />UCU Autonomous UGV Club.</h1>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UCU UGV Club</title>
+  <link rel="stylesheet" href="/assets/css/style.css?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@300;400;500;600;700;800&family=Fira+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <site-header></site-header>
+  <main class="site-main home-main">
+    <section class="custom-herovideo" id="block-heroimage">
+      <div class="overlay"></div>
+      <video autoplay="autoplay" loop="loop" muted="" playsinline="" id="video">
+        <source src="/assets/video/banner.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-text">
+        <p class="eyebrow">Research group</p>
+        <h1>Welcome to the<br />UCU Autonomous UGV Club.</h1>
+        <p class="lead">
+          Advancing the capabilities of unmanned ground vehicles with autonomous navigation and control.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="/research/">Explore research</a>
+          <a class="btn ghost" href="/reach/">Reach us</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="who-are-we">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">About the club</p>
+          <h2>Who are we</h2>
+        </div>
+        <div class="home-about">
           <p class="lead">
-           Advancing the capabilities of unmanned ground vehicles with autonomous navigation and control.
+            In light of the full-scale Russian invasion of Ukraine, which has demonstrated the strategic and
+            humanitarian
+            importance of autonomous robotics, our group is dedicated to advancing the state-of-the-art in UGV
+            algorithms.
           </p>
-          <div class="hero-actions">
-            <a class="btn" href="/research/">Explore research</a>
-            <a class="btn ghost" href="/reach/">Reach us</a>
-          </div>
+          <p>
+            Our work focuses on both software and hardware development, with a particular emphasis on the development of
+            autonomous navigation and control algorithms.
+          </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section" id="who-are-we">
-        <div class="container">
+    <section class="section" id="news">
+      <div class="container">
+        <div class="section-header-row">
           <div class="section-header">
-            <p class="eyebrow">About the club</p>
-            <h2>Who are we</h2>
+            <p class="eyebrow">Club updates</p>
+            <h2>News</h2>
+            <p>Recent announcements from our blog.</p>
           </div>
-          <div class="home-about">
-            <p class="lead">
-              In light of the full-scale Russian invasion of Ukraine, which has demonstrated the strategic and humanitarian
-               importance of autonomous robotics, our group is dedicated to advancing the state-of-the-art in UGV algorithms.
-             </p>
-            <p>
-              Our work focuses on both software and hardware development, with a particular emphasis on the development of autonomous navigation and control algorithms.
-            </p>
-          </div>
+          <a class="section-link" href="/blog/">View all posts →</a>
         </div>
-      </section>
-
-      <section class="section" id="news">
-        <div class="container">
-          <div class="section-header-row">
-            <div class="section-header">
-              <p class="eyebrow">Club updates</p>
-              <h2>News</h2>
-              <p>Recent announcements from our blog.</p>
-            </div>
-            <a class="section-link" href="/blog/">View all posts →</a>
-          </div>
-          <div class="news-list" data-home-news></div>
-        </div>
-      </section>
+        <div class="news-list" data-home-news></div>
+      </div>
+    </section>
 
 
-    </main>
+  </main>
 
-    <site-footer></site-footer>
+  <site-footer></site-footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="/assets/js/site.js?v=2"></script>
-    <script src="/assets/js/home.js?v=2"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="/assets/js/site.js?v=2"></script>
+  <script src="/assets/js/home.js?v=2"></script>
+</body>
+
 </html>
