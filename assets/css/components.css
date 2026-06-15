@@ -347,3 +347,35 @@
     height: auto;
   }
 }
+
+.code-icon {
+  margin-right: 6px;
+}
+
+.stretched-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.list-card,
+.news-card {
+  position: relative;
+}
+
+.code-link {
+  color: var(--muted);
+  transition: color 0.22s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.code-link:hover {
+  color: var(--accent);
+}
+
+.code-icon-large {
+  width: 20px !important;
+  height: 20px !important;
+}

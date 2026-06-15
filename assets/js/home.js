@@ -10,7 +10,9 @@ const parseNewsDate = (meta) => {
 };
 
 const getItemDate = (item) => {
-  if (!item || !item.meta) return new Date(0);
+  if (!item) return new Date(0);
+  if (item.date) return new Date(item.date);
+  if (!item.meta) return new Date(0);
   
   // Try parsing full date like "June 12, 2026"
   const datePart = item.meta.split("•")[0].trim();
@@ -26,6 +28,12 @@ const getItemDate = (item) => {
   }
   
   return new Date(0);
+};
+
+const formatDate = (date) => {
+  if (!date || date.getTime() === 0) return "";
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  return date.toLocaleDateString('en-US', options);
 };
 
 const fetchSectionItems = async (section) => {
@@ -73,14 +81,31 @@ const renderNews = async () => {
         ? marked.parse(item.summary)
         : await fetchExcerpt(item.section, item.slug);
         
-      const card = document.createElement("a");
+      let authorHTML = "";
+      if (item.authors && item.authors.length) {
+        authorHTML = `<p class="news-authors" style="font-size: 0.82rem; color: var(--muted); margin: -4px 0 8px 0; font-weight: 500;">By ${item.authors.join(", ")}</p>`;
+      }
+      
+      let codeHTML = "";
+      if (item.code) {
+        codeHTML = `
+          <a href="${item.code}" class="code-link" target="_blank" rel="noopener noreferrer" title="View Code">
+            ${window.App.getIcon("github", "code-icon-large")}
+          </a>
+        `;
+      }
+
+      const card = document.createElement("div");
       card.className = "news-card";
-      card.href = window.App.buildItemHref(item);
       card.innerHTML = `
-        <time class="news-date">${parseNewsDate(item.meta)}</time>
+        <time class="news-date">${formatDate(getItemDate(item))}</time>
         <div>
-          <span class="resource-tag list-tag">${item.kind}</span>
-          <h3>${item.title}</h3>
+          <div class="card-tag-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; width: 100%;">
+            <span class="resource-tag list-tag" style="margin-bottom: 0;">${item.kind}</span>
+            ${codeHTML}
+          </div>
+          <h3><a href="${window.App.buildItemHref(item)}" class="stretched-link">${item.title}</a></h3>
+          ${authorHTML}
           <div class="news-excerpt">${excerpt}</div>
         </div>
       `;

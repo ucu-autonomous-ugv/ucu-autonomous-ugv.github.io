@@ -70,14 +70,24 @@
     }
   },
   {
-    "name": "Place Holder",
-    "role": "MSc Graduate",
+    "name": "Volodymyr Bronetskyi",
+    "role": "BSc Graduate",
     "category": "alumni",
-    "classYear": "Class of 2025",
-    "currentPosition": "Robotics Researcher at Technical University of Munich",
+    "classYear": "Class of 2026",
+    "currentPosition": "",
     "links": {
-      "linkedin": "https://linkedin.com",
-      "github": "https://github.com/"
+      "linkedin": "https://www.linkedin.com/in/volodymyr-bronetskyi-402a092ab/",
+      "github": "https://github.com/vbronetskyi"
+    }
+  },
+  {
+    "name": "Radomyr Husiev",
+    "role": "BSc Graduate",
+    "category": "alumni",
+    "classYear": "Class of 2026",
+    "currentPosition": "",
+    "links": {
+      "github": "https://github.com/rhusiev"
     }
   }
 ]

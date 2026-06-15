@@ -137,31 +137,46 @@ const renderResearch = async () => {
   const pageItems = filteredItems.slice(startIndex, startIndex + pageSize);
 
   const cards = pageItems.map((item) => {
-    const card = document.createElement("a");
+    const card = document.createElement("div");
     card.className = "list-card";
 
-    if (item.link) {
-      card.href = item.link;
-      card.target = "_blank";
-      card.rel = "noopener noreferrer";
-    } else {
-      card.href = `/item/?section=research&slug=${item.slug}`;
+    let codeHTML = "";
+    if (item.code) {
+      codeHTML = `
+        <a href="${item.code}" class="code-link" target="_blank" rel="noopener noreferrer" title="View Code">
+          ${window.App.getIcon("github", "code-icon-large")}
+        </a>
+      `;
     }
 
     const tagsHTML = (item.tags || [])
       .map((t) => `<span class="entry-tag">${t}</span>`)
       .join("");
 
+    let metaText = item.meta;
+    if (item.authors && item.authors.length) {
+      metaText += ` • By ${item.authors.join(", ")}`;
+    }
+    if (item.date) {
+      const formattedDate = new Date(item.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      metaText += ` • ${formattedDate}`;
+    }
+
     card.innerHTML = `
       <div class="list-card-header">
-        <span class="resource-tag list-tag">${item.kind}</span>
+        <div class="card-tag-row" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 8px;">
+          <span class="resource-tag list-tag" style="margin-bottom: 0;">${item.kind}</span>
+          ${codeHTML}
+        </div>
         <h3>
-          ${item.title}
-          ${window.App.getIcon("external", "external-icon")}
+          <a href="${item.link || `/item/?section=research&slug=${item.slug}`}" class="stretched-link" ${item.link ? 'target="_blank" rel="noopener noreferrer"' : ''}>
+            ${item.title}
+            ${window.App.getIcon("external", "external-icon")}
+          </a>
         </h3>
       </div>
       <div class="entry-tags-wrap">${tagsHTML}</div>
-      <p class="list-meta">${item.meta}</p>
+      <p class="list-meta">${metaText}</p>
       <div class="list-excerpt">${marked.parse(item.summary || "")}</div>
     `;
     return card;
@@ -260,7 +275,18 @@ const renderItem = async () => {
   const backLink = document.querySelector("[data-back-link]");
 
   if (titleEl) titleEl.textContent = item.title;
-  if (metaEl) metaEl.textContent = item.meta;
+  
+  if (metaEl) {
+    let metaText = item.meta;
+    if (item.authors && item.authors.length) {
+      metaText += ` • By ${item.authors.join(", ")}`;
+    }
+    if (item.date) {
+      const formattedDate = new Date(item.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      metaText += ` • ${formattedDate}`;
+    }
+    metaEl.textContent = metaText;
+  }
   
   if (categoryEl) {
     if (section === "research") {
@@ -278,6 +304,23 @@ const renderItem = async () => {
       backLink.href = `/research/?tab=${tabName}`;
     } else {
       backLink.href = `/${section}/`;
+    }
+
+    // Append "View Code" button if there is a code link
+    const existingCodeBtn = document.querySelector("[data-code-link]");
+    if (existingCodeBtn) {
+      existingCodeBtn.remove();
+    }
+    if (item.code) {
+      const codeBtn = document.createElement("a");
+      codeBtn.className = "btn";
+      codeBtn.setAttribute("data-code-link", "");
+      codeBtn.href = item.code;
+      codeBtn.target = "_blank";
+      codeBtn.rel = "noopener noreferrer";
+      codeBtn.style.marginLeft = "12px";
+      codeBtn.innerHTML = `${window.App.getIcon("github", "code-icon")} View Code`;
+      backLink.insertAdjacentElement("afterend", codeBtn);
     }
   }
 
