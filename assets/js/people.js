@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Render students
     if (students.length > 0) {
-      container.appendChild(renderCards(students, "Students"));
+      container.appendChild(renderCards(students, "Contributors"));
     }
 
     // Render alumni

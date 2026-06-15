@@ -1,5 +1,4 @@
-const SPOTLIGHT_SECTIONS = ["blog", "research"];
-const NEWS_LIMIT = 3;
+const NEWS_LIMIT = 4;
 
 const parseNewsDate = (meta) => {
   if (!meta) {
@@ -8,6 +7,25 @@ const parseNewsDate = (meta) => {
 
   const [datePart] = meta.split("•");
   return datePart.trim();
+};
+
+const getItemDate = (item) => {
+  if (!item || !item.meta) return new Date(0);
+  
+  // Try parsing full date like "June 12, 2026"
+  const datePart = item.meta.split("•")[0].trim();
+  const parsedDate = Date.parse(datePart);
+  if (!isNaN(parsedDate)) {
+    return new Date(parsedDate);
+  }
+  
+  // Try extracting a 4-digit year from meta, e.g. "MSc thesis, 2025" -> 2025
+  const yearMatch = item.meta.match(/\b(20\d{2})\b/);
+  if (yearMatch) {
+    return new Date(parseInt(yearMatch[1]), 0, 1);
+  }
+  
+  return new Date(0);
 };
 
 const fetchSectionItems = async (section) => {
@@ -36,8 +54,13 @@ const renderNews = async () => {
     return;
   }
 
-  const items = await fetchSectionItems("blog");
-  const newsItems = items.slice(0, NEWS_LIMIT);
+  const blogItems = await fetchSectionItems("blog");
+  const researchItems = await fetchSectionItems("research");
+  
+  const allItems = [...blogItems, ...researchItems];
+  allItems.sort((a, b) => getItemDate(b) - getItemDate(a));
+  
+  const newsItems = allItems.slice(0, NEWS_LIMIT);
 
   if (!newsItems.length) {
     container.innerHTML = '<p class="home-empty">No news posts yet. Check back soon.</p>';
@@ -46,7 +69,10 @@ const renderNews = async () => {
 
   const cards = await Promise.all(
     newsItems.map(async (item) => {
-      const excerpt = await fetchExcerpt("blog", item.slug);
+      const excerpt = item.summary
+        ? marked.parse(item.summary)
+        : await fetchExcerpt(item.section, item.slug);
+        
       const card = document.createElement("a");
       card.className = "news-card";
       card.href = window.App.buildItemHref(item);
@@ -66,54 +92,5 @@ const renderNews = async () => {
   cards.forEach((card) => container.appendChild(card));
 };
 
-const renderSpotlight = async () => {
-  const container = document.querySelector("[data-home-spotlight]");
-  if (!container) {
-    return;
-  }
-
-  const sectionLists = await Promise.all(
-    SPOTLIGHT_SECTIONS.map((section) => fetchSectionItems(section))
-  );
-  const spotlightItems = sectionLists
-    .flat()
-    .filter((item) => item.spotlight)
-    .slice(0, 3);
-
-  if (!spotlightItems.length) {
-    container.innerHTML =
-      '<p class="home-empty">Spotlight stories will appear here as projects and updates are featured.</p>';
-    return;
-  }
-
-  const cards = await Promise.all(
-    spotlightItems.map(async (item) => {
-      const excerpt = item.summary
-        ? marked.parse(item.summary)
-        : await fetchExcerpt(item.section, item.slug);
-        
-      const card = document.createElement("a");
-      card.className = "spotlight-card";
-      card.href = window.App.buildItemHref(item);
-      if (item.link) {
-        card.target = "_blank";
-        card.rel = "noopener noreferrer";
-      }
-      
-      card.innerHTML = `
-        <span class="resource-tag">${item.kind}</span>
-        <h3>${item.title}</h3>
-        <p class="list-meta">${item.meta}</p>
-        <div class="list-excerpt">${excerpt}</div>
-        <span class="read-more">Read spotlight →</span>
-      `;
-      return card;
-    })
-  );
-
-  container.innerHTML = "";
-  cards.forEach((card) => container.appendChild(card));
-};
-
 renderNews();
-renderSpotlight();
+

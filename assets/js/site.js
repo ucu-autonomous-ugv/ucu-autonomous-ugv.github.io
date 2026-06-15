@@ -88,9 +88,9 @@ class SiteFooter extends HTMLElement {
         <div class="footer-col">
           <h4>Follow us</h4>
           <ul class="footer-social">
-            <li><a href="https://github.com/ucu-autonomous-ugv">${window.App.getIcon("github", "footer-icon")}GitHub</a></li>
-            <li><a href="#">${window.App.getIcon("linkedin", "footer-icon")}LinkedIn</a></li>
-            <li><a href="#">${window.App.getIcon("youtube", "footer-icon")}YouTube</a></li>
+            <li><a href="https://github.com/ucu-autonomous-ugv/ucu-autonomous-ugv.github.io">${window.App.getIcon("github", "footer-icon")}GitHub</a></li>
+            <li><a href="https://www.linkedin.com/company/ucu-apps/?originalSubdomain=ua">${window.App.getIcon("linkedin", "footer-icon")}LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/@ComputerScienceUCU">${window.App.getIcon("youtube", "footer-icon")}YouTube</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -101,8 +101,8 @@ class SiteFooter extends HTMLElement {
             Ukraine
           </p>
           <p class="footer-contact">
-            Tel: +380 00 000 00 00<br />
-            Email: <a href="mailto:hello@example.com">hello@example.com</a>
+            Tel: (032) 240-99-44<br />
+            Email: <a href="mailto:apps@ucu.edu.ua">apps@ucu.edu.ua</a>
           </p>
         </div>
       </div>
