@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@300;400;500;600;700;800&family=Fira+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  color-scheme: light;
+  --ink: #2c2c30;
+  --muted: #797a7c;
+  --cloud: #f9f9f8;
+  --sand: #f5efe3;
+  --surface: #ffffff;
+  --accent: #7f1716;
+  --accent-strong: #641110;
+  --border: #dbd5c4;
+  --shadow: 0 12px 30px rgba(11, 18, 26, 0.08);
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-family: "Manrope", "Fira Sans", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--cloud);
+  min-height: 100vh;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 14px;
+}
+
+.container {
+  width: min(1140px, 92%);
+  margin: 0 auto;
+}

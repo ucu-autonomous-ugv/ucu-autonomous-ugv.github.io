@@ -1,14 +1,3 @@
-const toTitleCase = (text) =>
-  text
-    .split("-")
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(" ");
-
-const normalizePath = (path) =>
-  path.endsWith(".html") ? path.slice(0, -5) : path;
-
-const ensureTrailingSlash = (path) => (path.endsWith("/") ? path : `${path}/`);
-
 const renderList = async (section) => {
   const container = document.querySelector(`[data-section="${section}"]`);
   if (!container) {
@@ -43,9 +32,7 @@ const renderList = async (section) => {
           <span class="resource-tag list-tag">${item.kind}</span>
           <h3>
             ${item.title}
-            <svg class="external-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-              <path d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.97 7 1.96 2 6.963-7 3.993 4v-10z"/>
-            </svg>
+            ${window.App.getIcon("external", "external-icon")}
           </h3>
         </div>
         <p class="list-meta">${item.meta}</p>
@@ -69,7 +56,7 @@ const renderList = async (section) => {
       link.textContent = label;
       const url = new URL(window.location.href);
       url.searchParams.set("page", String(page));
-      const pagePath = ensureTrailingSlash(normalizePath(url.pathname));
+      const pagePath = window.App.ensureTrailingSlash(window.App.normalizePath(url.pathname));
       link.href = `${pagePath}${url.search}`;
       return link;
     };
@@ -170,9 +157,7 @@ const renderResearch = async () => {
         <span class="resource-tag list-tag">${item.kind}</span>
         <h3>
           ${item.title}
-          <svg class="external-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-            <path d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.97 7 1.96 2 6.963-7 3.993 4v-10z"/>
-          </svg>
+          ${window.App.getIcon("external", "external-icon")}
         </h3>
       </div>
       <div class="entry-tags-wrap">${tagsHTML}</div>
@@ -202,7 +187,7 @@ const renderResearch = async () => {
       const url = new URL(window.location.href);
       url.searchParams.set("page", String(page));
       url.searchParams.set("tab", activeTab);
-      const pagePath = ensureTrailingSlash(normalizePath(url.pathname));
+      const pagePath = window.App.ensureTrailingSlash(window.App.normalizePath(url.pathname));
       link.href = `${pagePath}${url.search}`;
 
       link.addEventListener("click", (e) => {
@@ -279,9 +264,9 @@ const renderItem = async () => {
   
   if (categoryEl) {
     if (section === "research") {
-      categoryEl.textContent = `${toTitleCase(section)} / ${item.kind}`;
+      categoryEl.textContent = `${window.App.toTitleCase(section)} / ${item.kind}`;
     } else {
-      categoryEl.textContent = toTitleCase(section);
+      categoryEl.textContent = window.App.toTitleCase(section);
     }
   }
   

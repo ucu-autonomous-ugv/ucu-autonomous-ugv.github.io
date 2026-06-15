@@ -1,0 +1,306 @@
+/* Texas ECE-style Hero Video Banner */
+.custom-herovideo {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 42%;
+  overflow: hidden;
+  background: #000;
+}
+
+@media screen and (max-width: 1600px) {
+  .custom-herovideo {
+    padding-bottom: 40%;
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .custom-herovideo {
+    padding-bottom: 50%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .custom-herovideo {
+    padding-bottom: 90%;
+  }
+}
+
+.custom-herovideo .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(44, 44, 48, 0.85), rgba(127, 23, 22, 0.75));
+  z-index: 2;
+}
+
+.custom-herovideo video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 650px) {
+  .custom-herovideo video {
+    display: none;
+  }
+}
+
+.custom-herovideo .hero-text {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  z-index: 3;
+  width: 84%;
+}
+
+.custom-herovideo .hero-text h1 {
+  font-family: "Arsenal", "Georgia", serif;
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 16px;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.custom-herovideo .hero-text .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.85rem;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  color: var(--sand);
+  margin-bottom: 12px;
+}
+
+.custom-herovideo .hero-text .lead {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+  color: #efede3;
+  max-width: 600px;
+  margin-bottom: 28px;
+  line-height: 1.55;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.custom-herovideo .hero-text .hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+/* Home Stats Component */
+.hero-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 26px;
+  display: grid;
+  gap: 18px;
+}
+
+.hero-card h3 {
+  font-family: "Manrope", sans-serif;
+  margin-bottom: 6px;
+}
+
+.stat-grid {
+  margin-top: 28px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+}
+
+.stat h3 {
+  font-family: "Arsenal", "Georgia", serif;
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+/* Home About Specific Override */
+.home-about {
+  display: grid;
+  gap: 14px;
+}
+
+.home-about .lead {
+  font-size: 1.08rem;
+  color: var(--ink);
+}
+
+/* Home News Section */
+.news-list {
+  display: grid;
+  gap: 18px;
+}
+
+.news-card {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  transition: border-color 0.22s ease;
+  color: inherit;
+}
+
+.news-card:hover {
+  border-color: var(--accent);
+}
+
+.news-date {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+}
+
+.news-card .resource-tag {
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.news-card h3 {
+  font-family: "Arsenal", "Georgia", serif;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+.news-card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.news-excerpt p {
+  margin: 0;
+}
+
+/* Home Spotlight Section */
+.spotlight-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.spotlight-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: border-color 0.22s ease;
+  color: inherit;
+  min-height: 100%;
+}
+
+.spotlight-card:hover {
+  border-color: var(--accent);
+}
+
+.spotlight-card .resource-tag {
+  align-self: flex-start;
+  width: fit-content;
+  margin-bottom: 14px;
+}
+
+.spotlight-card h3 {
+  font-family: "Arsenal", "Georgia", serif;
+  font-size: 1.45rem;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.spotlight-card .list-meta {
+  margin-bottom: 14px;
+}
+
+.spotlight-card .list-excerpt {
+  -webkit-line-clamp: 3;
+  flex: 1;
+}
+
+.spotlight-card .read-more {
+  margin-top: 18px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.home-empty {
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding: 20px 0;
+}
+
+/* Page Home Overrides (Transparent navigation config) */
+body.page-home .site-header {
+  background: transparent;
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+  box-shadow: none;
+}
+
+body.page-home .brand {
+  color: #fff;
+}
+
+body.page-home .brand:hover {
+  color: var(--sand);
+}
+
+body.page-home .site-nav a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.page-home .site-nav a:hover,
+body.page-home .site-nav a.is-active {
+  color: #fff;
+}
+
+body.page-home .brand-logo {
+  height: 144px;
+}
+
+.page-home .footer-logo {
+  height: 120px;
+}
+
+/* Home Page Media Queries */
+@media (max-width: 720px) {
+  .news-card {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding-top: 40px;
+  }
+}

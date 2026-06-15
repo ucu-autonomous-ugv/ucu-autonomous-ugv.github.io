@@ -1,0 +1,87 @@
+/* Resources Component Styles */
+.resources-section {
+  margin-bottom: 56px;
+}
+
+.resources-section:last-child {
+  margin-bottom: 0;
+}
+
+.resources-category-title {
+  font-family: "Arsenal", "Georgia", serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin-bottom: 24px;
+  padding-left: 12px;
+  border-left: 4px solid var(--accent);
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.resource-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.22s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.resource-card:hover {
+  border-color: var(--accent);
+}
+
+.resource-card-header h3 {
+  font-family: "Arsenal", "Georgia", serif;
+  font-size: 1.3rem;
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 12px 0;
+  line-height: 1.25;
+}
+
+.resource-card-header .external-icon {
+  color: var(--muted);
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.resource-card:hover .external-icon {
+  color: var(--accent);
+}
+
+.resource-desc {
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.5;
+  flex: 1;
+  margin: 0 0 18px 0;
+}
+
+.resource-tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.resource-tag {
+  background: var(--sand);
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

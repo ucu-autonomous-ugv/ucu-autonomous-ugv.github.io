@@ -44,9 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           <div class="resource-card-header">
             <h3>
               ${item.title}
-              <svg class="external-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                <path d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.97 7 1.96 2 6.963-7 3.993 4v-10z"/>
-              </svg>
+              ${window.App.getIcon("external", "external-icon")}
             </h3>
           </div>
           <p class="resource-desc">${item.description}</p>

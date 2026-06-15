@@ -30,13 +30,6 @@ const fetchExcerpt = async (section, slug) => {
   return marked.parse(text);
 };
 
-const buildItemHref = (item) => {
-  if (item.link) {
-    return item.link;
-  }
-  return `/item/?section=${item.section}&slug=${item.slug}`;
-};
-
 const renderNews = async () => {
   const container = document.querySelector("[data-home-news]");
   if (!container) {
@@ -56,7 +49,7 @@ const renderNews = async () => {
       const excerpt = await fetchExcerpt("blog", item.slug);
       const card = document.createElement("a");
       card.className = "news-card";
-      card.href = buildItemHref(item);
+      card.href = window.App.buildItemHref(item);
       card.innerHTML = `
         <time class="news-date">${parseNewsDate(item.meta)}</time>
         <div>
@@ -101,7 +94,7 @@ const renderSpotlight = async () => {
         
       const card = document.createElement("a");
       card.className = "spotlight-card";
-      card.href = buildItemHref(item);
+      card.href = window.App.buildItemHref(item);
       if (item.link) {
         card.target = "_blank";
         card.rel = "noopener noreferrer";
