@@ -215,6 +215,93 @@
   margin-bottom: 0;
 }
 
+.content ul,
+.content ol {
+  margin: 0 0 16px 20px;
+}
+
+.content li {
+  margin-bottom: 6px;
+}
+
+/* Attachments — filed like accession stamps in a repository ledger */
+.attachments {
+  margin: 8px 0 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.attachment-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: var(--surface);
+  transition: background-color 0.15s ease;
+}
+
+.attachment-row + .attachment-row {
+  border-top: 1px solid var(--border);
+}
+
+.attachment-row:hover,
+.attachment-row:focus-visible {
+  background: var(--sand);
+}
+
+.attachment-stamp {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  background: var(--sand);
+  color: var(--accent);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.attachment-row:hover .attachment-stamp,
+.attachment-row:focus-visible .attachment-stamp {
+  background: var(--accent);
+  color: var(--surface);
+}
+
+.attachment-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.attachment-title {
+  font-family: "Arsenal", "Georgia", serif;
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--ink);
+}
+
+.attachment-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.attachment-go {
+  flex-shrink: 0;
+  color: var(--muted);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.attachment-row:hover .attachment-go,
+.attachment-row:focus-visible .attachment-go {
+  color: var(--accent);
+  transform: translateX(2px);
+}
+
 /* Reach Grid & Map Card */
 .reach-grid {
   display: grid;

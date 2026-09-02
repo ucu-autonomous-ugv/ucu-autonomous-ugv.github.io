@@ -56,22 +56,24 @@
     "code": "https://github.com/goof-an-odd-husky"
   },
   {
-    "slug": "placeheolder",
-    "title": "Placeholder",
-    "meta": "Conference paper, 2024",
+    "slug": "slam-low-light-report",
+    "title": "SLAM in Low-Light Environments: Project Report",
+    "meta": "Benchmarking visual SLAM systems under low-light conditions",
     "kind": "Publication",
     "tags": [
-      "Conference",
-      "Swarm",
-      "Coordination"
+      "SLAM",
+      "Low-light",
+      "Benchmark",
+      "FINISHED"
     ],
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida\nultricies ipsum vitae consequat.",
-    "link": "https://arxiv.org/abs/example2",
-    "date": "2024-10-15",
+    "summary": "We evaluate six visual SLAM systems — feature-based, direct, filter-based, and learning-based — on low-illumination sequences. Only pipelines combining inertial fusion with global optimization tracked reliably in the dark; RGB-only methods struggled, pointing to low-light-specific algorithms or added sensors as the way forward.",
+    "link": "https://arxiv.org/abs/2607.17699",
+    "date": "2026-07-20",
     "authors": [
-      "Yaroslav Prytula",
-      "Oleksandr Kosovan"
-    ],
-    "code": "example.com"
+      "Oleksandr Kosovan",
+      "Oleh Basystyi",
+      "Anna Stasyshyn",
+      "Yaroslav Prytula"
+    ]
   }
 ]

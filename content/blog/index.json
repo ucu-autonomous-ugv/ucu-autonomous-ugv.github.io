@@ -4,5 +4,11 @@
     "title": "Welcome to the UCU Autonomous UGV Club!",
     "meta": "June 12, 2026 • By Admin",
     "kind": "News"
+  },
+  {
+    "slug": "low-light-slam-lecture",
+    "title": "Lecture: Low-Light SLAM Overview",
+    "meta": "March 27, 2026 • By Admin",
+    "kind": "Lecture"
   }
 ]
