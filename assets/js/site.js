@@ -61,7 +61,7 @@ class SiteHeader extends HTMLElement {
     this.innerHTML = `
       <div class="container header-content">
         <a class="brand ${isHome ? "is-active" : ""}" href="/">
-          <img class="brand-logo" src="/assets/img/logo.svg" alt="" />
+          <img class="brand-logo" src="/assets/img/logo-ucu.png" alt="" />
           UCU UGV Club
         </a>
         <nav class="site-nav">
