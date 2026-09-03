@@ -82,7 +82,7 @@ class SiteFooter extends HTMLElement {
     this.innerHTML = `
       <div class="container footer-grid">
         <div class="footer-brand">
-          <img class="footer-logo footer-logo-large" src="/assets/img/logo_white.svg" alt="" />
+          <img class="footer-logo footer-logo-large" src="/assets/img/logo-ucu-white.png" alt="" />
           <p class="footer-copy">&copy; 2026 Ukrainian Catholic University</p>
           <p class="footer-updated">Last updated: <span data-updated></span></p>
         </div>
