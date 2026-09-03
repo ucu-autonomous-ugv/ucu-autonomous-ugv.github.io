@@ -24,7 +24,7 @@
     }
   },
   {
-    "name": "Oleh Basysti",
+    "name": "Oleh Basystyi",
     "role": "BSc Student",
     "category": "student",
     "classYear": "Class of 2027",
@@ -52,8 +52,8 @@
     "role": "BSc Student",
     "category": "student",
     "classYear": "Class of 2028",
-    "avatar": "",
-    "bio": "Todo",
+    "avatar": "https://avatars.githubusercontent.com/u/27022263?v=4",
+    "bio": "CS student working on datasets and processing pipelines.",
     "links": {
       "github": "https://github.com/draklowell",
       "linkedin": "https://www.linkedin.com/in/andriy-kryvyi/"
@@ -64,7 +64,8 @@
     "role": "BSc Student",
     "category": "student",
     "classYear": "Class of 2028",
-    "bio": "Todo",
+    "avatar": "https://avatars.githubusercontent.com/u/124047174?v=4",
+    "bio": "Robotics student working on UGV-systems",
     "links": {
       "github": "https://github.com/yelgor"
     }
@@ -74,7 +75,8 @@
     "role": "BSc Student",
     "category": "student",
     "classYear": "Class of 2027",
-    "bio": "Todo",
+    "avatar": "https://avatars.githubusercontent.com/u/47554366?v=4",
+    "bio": "Applied Sciences student working on SLAM",
     "links": {
       "github": "https://github.com/Zhukowych"
     }
