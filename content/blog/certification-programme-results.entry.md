@@ -1,0 +1,1 @@
+Results of our certification programme on off-road visual navigation: six visual SLAM systems benchmarked on low-light and challenging sequences, with the full report published on arXiv and in the UCU repository.

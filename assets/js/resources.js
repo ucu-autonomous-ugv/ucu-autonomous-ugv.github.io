@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (!container) return;
 
   try {
-    const response = await fetch("/content/resources/index.json");
+    const response = await fetch("/content/resources/index.json", window.App.contentFetchOpts);
     const resources = await response.json();
 
     // Group resources by category

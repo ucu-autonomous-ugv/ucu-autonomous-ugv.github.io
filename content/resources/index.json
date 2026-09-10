@@ -10,30 +10,33 @@
     ]
   },
   {
-    "title": "UCU Campus Dataset",
+    "title": "UCU SLAM Dataset v1",
     "category": "Research Datasets",
-    "description": "A multi-sensor dataset (TBA).",
-    "url": "https://example.com",
+    "description": "Outdoor multi-sensor SLAM dataset recorded with our Husky A200 across the UCU campus and Stryiskyi Park in Lviv: RGB-D camera, IMU, wheel odometry, and GNSS over 13 evaluation sequences (day and twilight, loop closures, elevation changes), released in ROS 2 bag (MCAP) and TUM RGB-D formats. Note: depth streams are unusable in v1.",
+    "url": "https://huggingface.co/datasets/ucu-autonomous-ugv/ucu-slam-dataset-v1",
     "tags": [
-      "Dataset"
+      "Dataset",
+      "SLAM"
     ]
   },
   {
     "title": "Husky UGV Build",
     "category": "Hardware",
-    "description": "Detailed specifications of Clearpath Husky A300 UGV, used by UCU UGV Club.",
-    "url": "https://clearpathrobotics.com/husky-a300-unmanned-ground-vehicle-robot/",
+    "description": "Official user manual for the Clearpath Husky A200 — the UGV platform used by the UCU UGV Club. Covers hardware specifications, safety, payload integration, ROS setup, and maintenance.",
+    "url": "https://docs.clearpathrobotics.com/docs_robots/outdoor_robots/husky/a200/user_manual_husky/",
     "tags": [
-      "Hardware"
+      "Hardware",
+      "Husky A200"
     ]
   },
   {
-    "title": "Placeholder",
+    "title": "GitHub Organization",
     "category": "Software & Code",
-    "description": "placeholder",
-    "url": "https://github.com/ucu-autonomous-ugv/placeholder",
+    "description": "All code released by the club: SLAM pipelines, navigation stacks, dataset tooling, and the source of this website.",
+    "url": "https://github.com/ucu-autonomous-ugv",
     "tags": [
-      "placeholder"
+      "Code",
+      "Open Source"
     ]
   }
 ]

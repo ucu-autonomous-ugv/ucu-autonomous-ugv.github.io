@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (!container) return;
 
   try {
-    const response = await fetch("/content/people/index.json");
+    const response = await fetch("/content/people/index.json", window.App.contentFetchOpts);
     const people = await response.json();
 
     const getAvatarMarkup = (person) => {

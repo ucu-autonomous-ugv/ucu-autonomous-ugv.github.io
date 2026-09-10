@@ -96,6 +96,9 @@
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  /* Let each figure keep its own height rather than stretching to the tallest,
+     which would strand a landscape figure above a large gap */
+  align-items: start;
 }
 
 .image-grid figure {
@@ -104,11 +107,21 @@
   border: 1px solid var(--border);
   padding: 14px;
   box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cap by height so figures of differing aspect ratios line up as a row */
+.image-grid img {
+  max-height: 620px;
+  margin-inline: auto;
 }
 
 .image-grid figcaption {
-  margin-top: 10px;
+  margin-top: auto;
+  padding-top: 10px;
   color: var(--muted);
+  font-size: 0.88rem;
 }
 
 /* List/Items Display Grids & Cards */
@@ -384,6 +397,19 @@
   border-color: #ffffff;
 }
 
+/* The ghost variant is drawn for the dark hero; the item page's back link
+   sits on the light page background and needs the inverse treatment */
+[data-back-link].btn.ghost {
+  color: var(--ink);
+  border-color: var(--border);
+}
+
+[data-back-link].btn.ghost:hover {
+  background: var(--sand);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .btn.btn-slim {
   width: 96px;
   height: 30px;
@@ -469,4 +495,16 @@
 .code-icon-large {
   width: 20px !important;
   height: 20px !important;
+}
+
+/* Wordmark logos keep their aspect ratio instead of the square icon box */
+.paper-icon-large {
+  height: 17px !important;
+  width: auto !important;
+}
+
+.card-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
 }

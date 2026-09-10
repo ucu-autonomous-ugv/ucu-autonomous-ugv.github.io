@@ -82,6 +82,18 @@
     }
   },
   {
+    "name": "Marta Sumyk",
+    "role": "MSc Student",
+    "category": "student",
+    "classYear": "Class of 2028",
+    "avatar": "https://avatars.githubusercontent.com/u/116710765?v=4",
+    "bio": "Data Science student and projects mentor.",
+    "links": {
+      "github": "https://github.com/martasumyk",
+      "linkedin": "https://www.linkedin.com/in/marta-sumyk/"
+    }
+  },
+  {
     "name": "Volodymyr Bronetskyi",
     "role": "BSc Graduate",
     "category": "alumni",

@@ -1,46 +1,65 @@
-const renderList = async (section) => {
-  const container = document.querySelector(`[data-section="${section}"]`);
-  if (!container) {
-    return;
-  }
+const buildListCard = (item, excerptHTML) => {
+  const card = document.createElement("div");
+  card.className = "list-card";
 
-  const response = await fetch(`/content/${section}/index.json`);
-  const items = await response.json();
+  const tagsHTML = (item.tags || [])
+    .map((t) => `<span class="entry-tag">${t}</span>`)
+    .join("");
 
-  const params = new URLSearchParams(window.location.search);
-  const pageSize = 10;
+  const href = window.App.buildItemHref(item);
+  const isExternal = Boolean(item.link);
+
+  card.innerHTML = `
+    <div class="list-card-header">
+      <div class="card-tag-row" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 8px;">
+        <span class="resource-tag list-tag" style="margin-bottom: 0;">${item.kind}</span>
+        ${window.App.buildItemLinks(item)}
+      </div>
+      <h3>
+        <a href="${href}" class="stretched-link" ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ""}>
+          ${item.title}
+          ${window.App.getIcon("external", "external-icon")}
+        </a>
+      </h3>
+    </div>
+    <div class="entry-tags-wrap">${tagsHTML}</div>
+    <p class="list-meta">${window.App.buildItemMeta(item)}</p>
+    <div class="list-excerpt">${excerptHTML}</div>
+  `;
+
+  return card;
+};
+
+const paginate = (items, params, pageSize = 10) => {
   const requestedPage = Number.parseInt(params.get("page") || "1", 10);
   const totalPages = Math.ceil(items.length / pageSize);
   const currentPage = Number.isNaN(requestedPage)
     ? 1
     : Math.min(Math.max(requestedPage, 1), Math.max(totalPages, 1));
   const startIndex = (currentPage - 1) * pageSize;
-  const pageItems = items.slice(startIndex, startIndex + pageSize);
+
+  return {
+    currentPage,
+    totalPages,
+    pageItems: items.slice(startIndex, startIndex + pageSize)
+  };
+};
+
+// The blog page lists the same merged news feed as the home page, unabridged
+const renderNewsList = async () => {
+  const container = document.querySelector('[data-section="blog"]');
+  if (!container) {
+    return;
+  }
+
+  const items = await window.App.fetchNewsItems();
+  const params = new URLSearchParams(window.location.search);
+  const { currentPage, totalPages, pageItems } = paginate(items, params);
 
   const cards = await Promise.all(
-    pageItems.map(async (item) => {
-      const entryResponse = await fetch(
-        `/content/${section}/${item.slug}.entry.md`
-      );
-      const entryText = await entryResponse.text();
-
-      const card = document.createElement("a");
-      card.className = "list-card";
-      card.href = `/item/?section=${section}&slug=${item.slug}`;
-      card.innerHTML = `
-        <div class="list-card-header">
-          <span class="resource-tag list-tag">${item.kind}</span>
-          <h3>
-            ${item.title}
-            ${window.App.getIcon("external", "external-icon")}
-          </h3>
-        </div>
-        <p class="list-meta">${item.meta}</p>
-        <div class="list-excerpt">${marked.parse(entryText)}</div>
-      `;
-
-      return card;
-    })
+    pageItems.map(async (item) =>
+      buildListCard(item, await window.App.fetchItemExcerpt(item))
+    )
   );
 
   container.innerHTML = "";
@@ -83,8 +102,9 @@ const renderResearch = async () => {
     return;
   }
 
-  const response = await fetch("/content/research/index.json");
-  const items = await response.json();
+  const items = (await window.App.fetchSectionItems("research")).sort(
+    window.App.compareByDateDesc
+  );
 
   const tabButtons = document.querySelectorAll(".research-nav-btn");
   const countAll = document.querySelector('[data-count="all"]');
@@ -127,60 +147,11 @@ const renderResearch = async () => {
     filteredItems = items.filter((item) => item.kind === "Publication");
   }
 
-  const pageSize = 10;
-  const requestedPage = Number.parseInt(params.get("page") || "1", 10);
-  const totalPages = Math.ceil(filteredItems.length / pageSize);
-  const currentPage = Number.isNaN(requestedPage)
-    ? 1
-    : Math.min(Math.max(requestedPage, 1), Math.max(totalPages, 1));
-  const startIndex = (currentPage - 1) * pageSize;
-  const pageItems = filteredItems.slice(startIndex, startIndex + pageSize);
+  const { currentPage, totalPages, pageItems } = paginate(filteredItems, params);
 
-  const cards = pageItems.map((item) => {
-    const card = document.createElement("div");
-    card.className = "list-card";
-
-    let codeHTML = "";
-    if (item.code) {
-      codeHTML = `
-        <a href="${item.code}" class="code-link" target="_blank" rel="noopener noreferrer" title="View Code">
-          ${window.App.getIcon("github", "code-icon-large")}
-        </a>
-      `;
-    }
-
-    const tagsHTML = (item.tags || [])
-      .map((t) => `<span class="entry-tag">${t}</span>`)
-      .join("");
-
-    let metaText = item.meta;
-    if (item.authors && item.authors.length) {
-      metaText += ` • By ${item.authors.join(", ")}`;
-    }
-    if (item.date) {
-      const formattedDate = new Date(item.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-      metaText += ` • ${formattedDate}`;
-    }
-
-    card.innerHTML = `
-      <div class="list-card-header">
-        <div class="card-tag-row" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 8px;">
-          <span class="resource-tag list-tag" style="margin-bottom: 0;">${item.kind}</span>
-          ${codeHTML}
-        </div>
-        <h3>
-          <a href="${item.link || `/item/?section=research&slug=${item.slug}`}" class="stretched-link" ${item.link ? 'target="_blank" rel="noopener noreferrer"' : ''}>
-            ${item.title}
-            ${window.App.getIcon("external", "external-icon")}
-          </a>
-        </h3>
-      </div>
-      <div class="entry-tags-wrap">${tagsHTML}</div>
-      <p class="list-meta">${metaText}</p>
-      <div class="list-excerpt">${marked.parse(item.summary || "")}</div>
-    `;
-    return card;
-  });
+  const cards = pageItems.map((item) =>
+    buildListCard(item, marked.parse(item.summary || ""))
+  );
 
   container.innerHTML = "";
   cards.forEach((card) => container.appendChild(card));
@@ -253,8 +224,7 @@ const renderItem = async () => {
     return;
   }
 
-  const listResponse = await fetch(`/content/${section}/index.json`);
-  const items = await listResponse.json();
+  const items = await window.App.fetchSectionItems(section);
   const item = items.find((entry) => entry.slug === slug);
 
   if (!item) {
@@ -265,7 +235,7 @@ const renderItem = async () => {
     ? `/content/${section}/${slug}.md`
     : `/content/${section}/${slug}.page.md`;
 
-  const pageResponse = await fetch(mdUrl);
+  const pageResponse = await fetch(mdUrl, window.App.contentFetchOpts);
   const pageText = await pageResponse.text();
 
   const titleEl = document.querySelector("[data-item-title]");
@@ -277,15 +247,7 @@ const renderItem = async () => {
   if (titleEl) titleEl.textContent = item.title;
   
   if (metaEl) {
-    let metaText = item.meta;
-    if (item.authors && item.authors.length) {
-      metaText += ` • By ${item.authors.join(", ")}`;
-    }
-    if (item.date) {
-      const formattedDate = new Date(item.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-      metaText += ` • ${formattedDate}`;
-    }
-    metaEl.textContent = metaText;
+    metaEl.textContent = window.App.buildItemMeta(item);
   }
   
   if (categoryEl) {
@@ -332,5 +294,5 @@ window.addEventListener("popstate", () => {
 });
 
 renderResearch();
-renderList("blog");
+renderNewsList();
 renderItem();

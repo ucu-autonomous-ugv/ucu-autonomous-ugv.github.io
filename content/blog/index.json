@@ -1,14 +1,47 @@
 [
   {
+    "slug": "ucu-slam-dataset-results",
+    "title": "Results of UCU SLAM dataset collection",
+    "meta": "Certification programme, February – September 2026",
+    "kind": "Report",
+    "date": "2026-09-10",
+    "authors": [
+      "Andriy Kryvyi",
+      "Hordii Yeliseev"
+    ],
+    "dataset": "https://huggingface.co/datasets/ucu-autonomous-ugv/ucu-slam-dataset-v1",
+    "code": "https://github.com/ucu-autonomous-ugv/ucu-slam-dataset"
+  },
+  {
+    "slug": "certification-programme-results",
+    "title": "Results of certification program “Off-Road Visual Navigation: Development and Evaluation of Systems in Challenging Environments”",
+    "meta": "Certification programme, February – July 2026",
+    "kind": "Report",
+    "date": "2026-07-20",
+    "authors": [
+      "Oleh Basystyi",
+      "Anna Stasyshyn"
+    ],
+    "paper": "https://arxiv.org/abs/2607.17699"
+  },
+  {
     "slug": "welcome-to-the-ugv-club",
     "title": "Welcome to the UCU Autonomous UGV Club!",
-    "meta": "June 12, 2026 • By Admin",
-    "kind": "News"
+    "meta": "",
+    "kind": "News",
+    "date": "2026-06-12",
+    "authors": [
+      "Admin"
+    ]
   },
   {
     "slug": "low-light-slam-lecture",
     "title": "Lecture: Low-Light SLAM Overview",
-    "meta": "March 27, 2026 • By Admin",
-    "kind": "Lecture"
+    "meta": "",
+    "kind": "Lecture",
+    "date": "2026-03-27",
+    "authors": [
+      "Admin"
+    ]
   }
 ]

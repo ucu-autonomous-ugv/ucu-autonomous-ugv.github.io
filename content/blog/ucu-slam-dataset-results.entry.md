@@ -1,0 +1,1 @@
+Thirteen outdoor sequences recorded on our Husky A200 across the UCU campus and Stryiskyi Park — RGB-D, IMU, wheel odometry and GNSS, with reverse and twilight repeats — now published on Hugging Face.
