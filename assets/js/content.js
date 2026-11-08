@@ -11,8 +11,8 @@ const buildListCard = (item, excerptHTML) => {
 
   card.innerHTML = `
     <div class="list-card-header">
-      <div class="card-tag-row" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 8px;">
-        <span class="resource-tag list-tag" style="margin-bottom: 0;">${item.kind}</span>
+      <div class="card-tag-row">
+        <span class="resource-tag list-tag">${item.kind}</span>
         ${window.App.buildItemLinks(item)}
       </div>
       <h3>

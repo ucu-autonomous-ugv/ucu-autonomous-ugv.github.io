@@ -1,13 +1,15 @@
 /* Page Hero Section */
 .page-hero {
-  padding: 70px 0 16px;
+  padding: 64px 0 16px;
   background: transparent;
 }
 
 .page-hero h1 {
   font-family: "Arsenal", "Georgia", serif;
   font-size: clamp(2rem, 3.6vw, 3rem);
-  margin-bottom: 10px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
 }
 
 /* Feature Grid */
@@ -26,32 +28,17 @@
   box-shadow: var(--shadow);
 }
 
-/* Eyebrows and Section Headers */
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 0.78rem;
-  font-family: "Manrope", sans-serif;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 4px;
-}
-
-.section-header .eyebrow {
-  margin-bottom: 2px;
-}
-
+/* Section headers */
 .section-header {
   display: grid;
   gap: 4px;
   margin-bottom: 32px;
-  padding-left: 16px;
-  border-left: 4px solid var(--accent);
 }
 
 .section-header h2 {
   font-family: "Arsenal", "Georgia", serif;
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.15;
 }
 
 .section-header p {
@@ -73,9 +60,9 @@
 }
 
 .section-link {
-  font-weight: 700;
+  font-weight: 500;
   color: var(--accent);
-  font-size: 0.92rem;
+  font-size: 0.9375rem;
   white-space: nowrap;
 }
 
@@ -105,7 +92,7 @@
   background: var(--surface);
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  padding: 14px;
+  padding: 12px;
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
@@ -119,34 +106,53 @@
 
 .image-grid figcaption {
   margin-top: auto;
-  padding-top: 10px;
+  padding-top: 12px;
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 0.875rem;
 }
 
 /* List/Items Display Grids & Cards */
 .list-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.list-grid:empty {
+  display: none;
 }
 
 .list-card {
-  background: var(--surface);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  padding: 24px;
+  padding: 24px 28px;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.22s ease;
+  transition: background-color var(--fast) var(--ease);
   cursor: pointer;
   text-decoration: none;
   color: inherit;
 }
 
+.list-card + .list-card {
+  border-top: 1px solid var(--border);
+}
+
 .list-card:hover {
-  border-color: var(--accent);
+  background: #fcfbf9;
+}
+
+.list-card:hover h3 a {
+  color: var(--accent);
+}
+
+.card-tag-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
 }
 
 .list-card-header {
@@ -158,14 +164,21 @@
 
 .list-card-header h3 {
   font-family: "Arsenal", "Georgia", serif;
-  font-size: 1.3rem;
+  font-size: 1.375rem;
   color: var(--ink);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
   margin: 0;
   line-height: 1.25;
+  max-width: 48rem;
+}
+
+.list-card-header h3 a {
+  display: inline;
+}
+
+.list-card-header h3 .external-icon {
+  display: inline-block;
+  vertical-align: baseline;
+  margin-left: 8px;
 }
 
 .list-card-header .external-icon {
@@ -179,16 +192,16 @@
 }
 
 .list-meta {
-  font-size: 0.88rem;
+  font-size: 0.875rem;
   color: var(--muted);
-  margin: 0 0 12px 0;
-  font-weight: 500;
+  margin: 0 0 8px 0;
 }
 
 .list-excerpt {
-  font-size: 0.92rem;
-  color: var(--ink);
-  line-height: 1.5;
+  font-size: 0.9375rem;
+  color: var(--ink-2);
+  line-height: 1.55;
+  max-width: 48rem;
   flex: 1;
   overflow: hidden;
   display: -webkit-box;
@@ -249,7 +262,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 14px 18px;
+  padding: 16px 20px;
   background: var(--surface);
   transition: background-color 0.15s ease;
 }
@@ -268,8 +281,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 1.5px solid var(--accent);
   background: var(--sand);
@@ -291,14 +304,13 @@
 }
 
 .attachment-title {
-  font-family: "Arsenal", "Georgia", serif;
-  font-weight: 700;
-  font-size: 1.02rem;
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
   color: var(--ink);
 }
 
 .attachment-desc {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   color: var(--muted);
   margin-top: 2px;
 }
@@ -352,18 +364,17 @@
 }
 
 .reach-map {
-  border-radius: 14px;
+  border-radius: 12px;
   height: 220px;
   overflow: hidden;
   border: 1px solid var(--border);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .reach-map iframe {
   width: 100%;
   height: 100%;
   border: 0;
-  border-radius: 14px;
+  border-radius: 12px;
 }
 
 /* Buttons - Basic overrides */
@@ -371,14 +382,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 44px;
   background: var(--accent);
   color: #fff;
-  padding: 12px 24px;
-  border-radius: 4px;
-  font-family: "Manrope", sans-serif;
-  font-weight: 700;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
   border: 1px solid transparent;
-  transition: all 0.25s ease;
+  transition: background-color var(--fast) var(--ease), border-color var(--fast) var(--ease), color var(--fast) var(--ease), transform var(--fast) var(--ease);
+}
+
+.btn:active {
+  transform: scale(0.98);
 }
 
 .btn:hover {
@@ -389,7 +405,7 @@
 .btn.ghost {
   background: transparent;
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .btn.ghost:hover {
@@ -414,13 +430,12 @@
   width: 96px;
   height: 30px;
   padding: 0;
-  font-size: 0.76rem;
-  border-radius: 8px;
-  letter-spacing: 0.02em;
+  font-size: 0.75rem;
+  border-radius: 6px;
 }
 
 .btn.btn-animated {
-  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  transition: color var(--fast) var(--ease), border-color var(--fast) var(--ease), background-color var(--fast) var(--ease);
 }
 
 /* Pagination Section */
@@ -428,19 +443,20 @@
   margin-top: 32px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
 }
 
 .page-link {
   border: 1px solid var(--border);
-  padding: 6px 10px;
-  border-radius: 8px;
+  padding: 4px 12px;
+  border-radius: 6px;
   background: var(--surface);
   color: var(--ink);
   font-weight: 500;
-  font-size: 0.82rem;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  transition: color var(--fast) var(--ease), border-color var(--fast) var(--ease);
 }
 
 .page-link:hover {
@@ -457,7 +473,7 @@
 /* Media Queries for Shared Components */
 @media (max-width: 720px) {
   .list-card {
-    grid-template-columns: minmax(0, 1fr);
+    padding: 20px;
   }
 
   .list-body {
@@ -483,7 +499,7 @@
 
 .code-link {
   color: var(--muted);
-  transition: color 0.22s ease;
+  transition: color var(--fast) var(--ease);
   position: relative;
   z-index: 2;
 }

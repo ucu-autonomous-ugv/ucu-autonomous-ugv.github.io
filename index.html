@@ -5,11 +5,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>UCU UGV Club</title>
-  <link rel="stylesheet" href="/assets/css/style.css?v=4" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=8" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@300;400;500;600;700;800&family=Fira+Sans:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
     rel="stylesheet" />
 </head>
 
@@ -22,10 +22,9 @@
         <source src="/assets/video/banner.mp4" type="video/mp4" />
       </video>
       <div class="hero-text">
-        <p class="eyebrow">Research group</p>
-        <h1>Welcome to the<br />UCU Autonomous UGV Club.</h1>
+        <h1>Perception and navigation for unmanned ground vehicles</h1>
         <p class="lead">
-          Advancing the capabilities of unmanned ground vehicles with autonomous navigation and perception.
+          The UCU Autonomous UGV Club builds SLAM, visual navigation and open datasets for vehicles that drive in low light and off-road terrain
         </p>
         <div class="hero-actions">
           <a class="btn" href="/research/">Explore research</a>
@@ -36,29 +35,30 @@
 
     <section class="section" id="who-are-we">
       <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">About the club</p>
-          <h2>Who we are</h2>
-        </div>
         <div class="home-about">
-          <p class="lead">
-            We're a student research club at UCU APPS, Lviv, working on autonomy for unmanned ground vehicles.
-          </p>
+          <div class="home-about-text">
+            <div class="section-header">
+              <h2>Who we are</h2>
+            </div>
+            <p class="lead">
+              Students and faculty of UCU APPS in Lviv. We take methods from papers onto a real vehicle and share what we learn as theses, datasets and lectures.
+            </p>
+          </div>
+          <ul class="home-pillars">
+            <li>
+              <h3>Real vehicles, real terrain</h3>
+              <p>Perception and navigation built on data we record with a Clearpath Husky A200, on campus and in Stryiskyi Park</p>
+            </li>
+            <li>
+              <h3>Algorithms first</h3>
+              <p>Computer vision and learning-based methods for SLAM, localization and obstacle avoidance</p>
+            </li>
+            <li>
+              <h3>Open to collaboration</h3>
+              <p>Joint research, thesis supervision and industry partnerships</p>
+            </li>
+          </ul>
         </div>
-        <ul class="home-pillars">
-          <li>
-            <h3>Autonomy for Unmanned Ground Vehicles</h3>
-            <p>Perception and navigation for real ground vehicles</p>
-          </li>
-          <li>
-            <h3>Algorithm-first</h3>
-            <p>State-of-the-art AI and computer vision</p>
-          </li>
-          <li>
-            <h3>Open to collaboration</h3>
-            <p>Joint research, thesis supervision, and industry partnerships</p>
-          </li>
-        </ul>
       </div>
     </section>
 
@@ -66,11 +66,9 @@
       <div class="container">
         <div class="section-header-row">
           <div class="section-header">
-            <p class="eyebrow">Club updates</p>
             <h2>News</h2>
-            <p>Recent announcements and updates.</p>
           </div>
-          <a class="section-link" href="/blog/">View all posts →</a>
+          <a class="section-link" href="/blog/">All posts →</a>
         </div>
         <div class="news-list" data-home-news></div>
       </div>
@@ -82,8 +80,8 @@
   <site-footer></site-footer>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="/assets/js/site.js?v=4"></script>
-  <script src="/assets/js/home.js?v=4"></script>
+  <script src="/assets/js/site.js?v=8"></script>
+  <script src="/assets/js/home.js?v=8"></script>
 </body>
 
 </html>

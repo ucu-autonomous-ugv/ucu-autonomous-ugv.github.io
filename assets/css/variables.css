@@ -1,17 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@300;400;500;600;700;800&family=Fira+Sans:wght@300;400;500;600;700&display=swap');
+/* Fonts are loaded once, by the <link> in each page head */
 
 :root {
   color-scheme: light;
+
+  /* Warm paper neutrals, UCU maroon as the single accent */
   --ink: #2c2c30;
-  --muted: #797a7c;
+  --ink-2: #55534f;
+  --muted: #6e6c68;
   --cloud: #f9f9f8;
   --sand: #f5efe3;
   --surface: #ffffff;
   --accent: #7f1716;
   --accent-strong: #641110;
-  --border: #dbd5c4;
-  --shadow: 0 12px 30px rgba(11, 18, 26, 0.08);
+  --border: rgba(44, 44, 48, 0.1);
+  --border-strong: rgba(44, 44, 48, 0.2);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   --radius: 16px;
+
+  --font-ui: "Manrope", "Segoe UI", sans-serif;
+  --font-display: "Arsenal", "Georgia", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --fast: 160ms;
 }
 
 * {
@@ -25,7 +36,7 @@ html {
 }
 
 body {
-  font-family: "Manrope", "Fira Sans", "Segoe UI", sans-serif;
+  font-family: var(--font-ui);
   color: var(--ink);
   background: var(--cloud);
   min-height: 100vh;
@@ -34,19 +45,32 @@ body {
   flex-direction: column;
 }
 
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
 a {
   color: inherit;
   text-decoration: none;
+  transition: color var(--fast) var(--ease);
 }
 
 a:hover {
   color: var(--accent);
 }
 
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 img {
   max-width: 100%;
   display: block;
-  border-radius: 14px;
+  border-radius: 12px;
 }
 
 .container {

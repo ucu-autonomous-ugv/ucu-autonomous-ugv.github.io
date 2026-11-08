@@ -15,7 +15,6 @@ site-footer {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   z-index: 20;
 }
 
@@ -23,7 +22,7 @@ site-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0;
+  padding: 12px 0;
   gap: 20px;
   flex-wrap: wrap;
   min-height: 56px;
@@ -32,53 +31,19 @@ site-footer {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-family: "Manrope", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
+  gap: 12px;
+  font-size: 1.125rem;
+  font-weight: 600;
   color: var(--ink);
-  letter-spacing: -0.02em;
   white-space: nowrap;
-  position: relative;
-  padding: 6px 10px;
   border-radius: 6px;
-  transition: color 0.25s ease;
 }
 
 .brand-logo {
-  height: 48px;
+  height: 44px;
   width: auto;
   border-radius: 0;
   flex-shrink: 0;
-}
-
-.brand::after {
-  content: "";
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  bottom: -4px;
-  height: 2px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.25s ease;
-}
-
-.brand:hover {
-  color: var(--accent);
-}
-
-.brand:hover::after {
-  transform: scaleX(1);
-}
-
-.brand.is-active {
-  color: var(--accent);
-}
-
-.brand.is-active::after {
-  transform: scaleX(1);
 }
 
 .brand.is-static {
@@ -89,30 +54,30 @@ site-footer {
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  font-family: "Manrope", sans-serif;
-  font-weight: 600;
+  gap: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
 }
 
 .site-nav a {
   position: relative;
-  padding: 6px 10px;
-  color: var(--ink);
+  padding: 8px 12px;
+  color: var(--ink-2);
   border-radius: 6px;
-  transition: color 0.25s ease;
+  transition: color var(--fast) var(--ease);
 }
 
 .site-nav a::after {
   content: "";
   position: absolute;
-  left: 10px;
-  right: 10px;
-  bottom: -4px;
+  left: 12px;
+  right: 12px;
+  bottom: -2px;
   height: 2px;
   background: var(--accent);
   transform: scaleX(0);
   transform-origin: center;
-  transition: transform 0.25s ease;
+  transition: transform 200ms var(--ease);
 }
 
 .site-nav a:hover {
@@ -124,7 +89,7 @@ site-footer {
 }
 
 .site-nav a.active {
-  color: var(--accent);
+  color: var(--ink);
 }
 
 .site-nav a.active::after {
@@ -135,8 +100,8 @@ site-footer {
 .site-footer {
   background: #414141;
   color: #f5f4f2;
-  padding: 32px 0 28px;
-  margin-top: 40px;
+  padding: 40px 0 32px;
+  margin-top: 64px;
 }
 
 .footer-grid {
@@ -148,7 +113,7 @@ site-footer {
 
 .footer-brand {
   display: grid;
-  gap: 6px;
+  gap: 8px;
 }
 
 .footer-logo {
@@ -165,8 +130,8 @@ site-footer {
 .footer-unit,
 .footer-updated {
   margin: 0;
-  font-size: 0.84rem;
-  line-height: 1.45;
+  font-size: 0.8125rem;
+  line-height: 1.5;
   color: #d9d8d6;
 }
 
@@ -180,14 +145,14 @@ site-footer {
 
 .site-footer h4 {
   margin: 0 0 8px;
-  font-size: 0.88rem;
-  font-weight: 700;
+  font-size: 0.875rem;
+  font-weight: 600;
   color: #f5f4f2;
 }
 
 .site-footer a {
   color: #f5f4f2;
-  transition: opacity 0.2s ease;
+  transition: opacity var(--fast) var(--ease);
 }
 
 .site-footer a:hover {
@@ -210,7 +175,7 @@ site-footer {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.84rem;
+  font-size: 0.8125rem;
 }
 
 .footer-icon {
@@ -221,14 +186,14 @@ site-footer {
 }
 
 .footer-contact {
-  font-size: 0.84rem;
-  line-height: 1.45;
+  font-size: 0.8125rem;
+  line-height: 1.5;
   color: #d9d8d6;
   margin: 0;
 }
 
 .footer-contact + .footer-contact {
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 /* Media Queries for Layout */

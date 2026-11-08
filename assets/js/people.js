@@ -111,13 +111,13 @@ document.addEventListener("DOMContentLoaded", async () => {
           if (person.links) {
             linksHtml = Object.entries(person.links)
               .map(([key, url]) => `<a class="alumni-link" href="${url}" target="_blank" rel="noopener noreferrer">${key}</a>`)
-              .join(" • ");
+              .join(" · ");
           }
 
           item.innerHTML = `
             <span class="alumni-name">${person.name}</span>
-            <span class="alumni-role">— ${person.currentPosition || person.role}</span>
-            ${linksHtml ? `<span class="alumni-links-wrap">[ ${linksHtml} ]</span>` : ""}
+            <span class="alumni-role">${person.currentPosition || person.role}</span>
+            ${linksHtml ? `<span class="alumni-links-wrap">${linksHtml}</span>` : ""}
           `;
           list.appendChild(item);
         });
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Render leadership
     if (leadership.length > 0) {
-      container.appendChild(renderCards(leadership, "Faculty & Leadership"));
+      container.appendChild(renderCards(leadership, "Faculty and leadership"));
     }
 
     // Render students
@@ -149,6 +149,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   } catch (error) {
     console.error("Error loading people:", error);
-    container.innerHTML = `<p class="error">Failed to load team profiles. Please try again later.</p>`;
+    container.innerHTML = `<p class="error">Team profiles could not load. Refresh the page to try again.</p>`;
   }
 });

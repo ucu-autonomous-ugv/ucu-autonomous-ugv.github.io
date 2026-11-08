@@ -11,7 +11,7 @@ const renderNews = async () => {
   const newsItems = allItems.slice(0, NEWS_LIMIT);
 
   if (!newsItems.length) {
-    container.innerHTML = '<p class="home-empty">No news posts yet. Check back soon.</p>';
+    container.innerHTML = '<p class="home-empty">No posts yet</p>';
     return;
   }
 
@@ -21,16 +21,22 @@ const renderNews = async () => {
 
       let authorHTML = "";
       if (item.authors && item.authors.length) {
-        authorHTML = `<p class="news-authors" style="font-size: 0.82rem; color: var(--muted); margin: -4px 0 8px 0; font-weight: 500;">By ${item.authors.join(", ")}</p>`;
+        authorHTML = `<p class="news-authors">By ${item.authors.join(", ")}</p>`;
       }
+
+      // Log-style timestamp, the same YYYY-MM-DD the content files use
+      const date = window.App.getItemDate(item);
+      const isoDate = date.getTime() === 0
+        ? ""
+        : `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
 
       const card = document.createElement("div");
       card.className = "news-card";
       card.innerHTML = `
-        <time class="news-date">${window.App.formatDate(window.App.getItemDate(item))}</time>
+        <time class="news-date" datetime="${isoDate}">${isoDate}</time>
         <div>
-          <div class="card-tag-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; width: 100%;">
-            <span class="resource-tag list-tag" style="margin-bottom: 0;">${item.kind}</span>
+          <div class="news-tag-row">
+            <span class="resource-tag list-tag">${item.kind}</span>
             ${window.App.buildItemLinks(item)}
           </div>
           <h3><a href="${window.App.buildItemHref(item)}" class="stretched-link">${item.title}</a></h3>

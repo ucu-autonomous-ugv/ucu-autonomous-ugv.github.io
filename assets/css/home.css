@@ -1,11 +1,11 @@
-/* Texas ECE-style Hero Video Banner */
+/* Hero: real footage of the vehicle under a neutral scrim */
 .custom-herovideo {
   position: relative;
   width: 100%;
   height: 0;
   padding-bottom: 42%;
   overflow: hidden;
-  background: #000;
+  background: #1c1b1a;
 }
 
 @media screen and (max-width: 1600px) {
@@ -16,20 +16,25 @@
 
 @media screen and (max-width: 815px) {
   .custom-herovideo {
-    padding-bottom: 50%;
+    padding-bottom: 56%;
   }
 }
 
 @media screen and (max-width: 650px) {
   .custom-herovideo {
-    padding-bottom: 90%;
+    padding-bottom: 0;
+    height: auto;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
   }
 }
 
+/* A tone shift inside one neutral, darker where the text sits */
 .custom-herovideo .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(44, 44, 48, 0.85), rgba(127, 23, 22, 0.75));
+  background: linear-gradient(90deg, rgba(20, 19, 18, 0.78) 0%, rgba(20, 19, 18, 0.5) 55%, rgba(20, 19, 18, 0.2) 100%);
   z-index: 2;
 }
 
@@ -51,178 +56,159 @@
 .custom-herovideo .hero-text {
   position: absolute;
   top: 50%;
-  left: 8%;
+  left: max(4%, calc((100% - 1140px) / 2));
   transform: translateY(-50%);
   color: #ffffff;
   z-index: 3;
-  width: 84%;
+  width: min(640px, 88%);
+}
+
+@media screen and (max-width: 650px) {
+  .custom-herovideo .hero-text {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 92%;
+    margin: 0 auto;
+    padding: 64px 0;
+  }
 }
 
 .custom-herovideo .hero-text h1 {
-  font-family: "Arsenal", "Georgia", serif;
-  font-size: clamp(2rem, 4.5vw, 3.8rem);
-  line-height: 1.15;
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.6vw, 4rem);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
   color: #ffffff;
-  margin-bottom: 16px;
-  font-weight: 700;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-.custom-herovideo .hero-text .eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
-  font-size: 0.85rem;
-  font-family: "Manrope", sans-serif;
-  font-weight: 700;
-  color: var(--sand);
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 .custom-herovideo .hero-text .lead {
-  font-family: "Manrope", sans-serif;
-  font-size: clamp(0.95rem, 1.8vw, 1.25rem);
-  color: #efede3;
-  max-width: 600px;
-  margin-bottom: 28px;
+  font-size: clamp(1rem, 1.5vw, 1.1875rem);
   line-height: 1.55;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 36rem;
 }
 
 .custom-herovideo .hero-text .hero-actions {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin-top: 24px;
+  margin-top: 32px;
 }
 
-/* Home Stats Component */
-.hero-card {
-  background: var(--surface);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  padding: 26px;
-  display: grid;
-  gap: 18px;
-}
-
-.hero-card h3 {
-  font-family: "Manrope", sans-serif;
-  margin-bottom: 6px;
-}
-
-.stat-grid {
-  margin-top: 28px;
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-}
-
-.stat {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 14px 16px;
-  box-shadow: var(--shadow);
-}
-
-.stat h3 {
-  font-family: "Arsenal", "Georgia", serif;
-  font-size: 1.5rem;
-  margin-bottom: 4px;
-}
-
-/* Home About Specific Override */
+/* Who we are */
 .home-about {
   display: grid;
-  gap: 14px;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.home-about .section-header {
+  margin-bottom: 16px;
 }
 
 .home-about .lead {
-  font-size: 1.08rem;
-  color: var(--ink);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--ink-2);
 }
 
-/* "Who we are" pillars */
 .home-pillars {
   list-style: none;
-  margin: 28px 0 0;
+  margin: 0;
   padding: 0;
   display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .home-pillars li {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--accent);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 20px 22px;
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+}
+
+.home-pillars li:first-child {
+  padding-top: 8px;
+  border-top: 0;
 }
 
 .home-pillars h3 {
-  font-family: "Arsenal", "Georgia", serif;
-  font-size: 1.14rem;
-  line-height: 1.3;
-  margin-bottom: 6px;
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 4px;
 }
 
 .home-pillars p {
   margin: 0;
-  color: var(--muted);
-  font-size: 0.94rem;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
   line-height: 1.5;
 }
 
-/* Home News Section */
+/* News */
 .news-list {
   display: grid;
-  gap: 18px;
+  gap: 16px;
 }
 
 .news-card {
   display: grid;
   grid-template-columns: 120px minmax(0, 1fr);
-  gap: 20px;
+  gap: 24px;
   align-items: start;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 20px 22px;
-  transition: border-color 0.22s ease;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  transition: border-color var(--fast) var(--ease);
   color: inherit;
 }
 
 .news-card:hover {
-  border-color: var(--accent);
+  border-color: var(--border-strong);
+}
+
+.news-card:hover h3 a {
+  color: var(--accent);
 }
 
 .news-date {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  line-height: 1.4;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
-.news-card .resource-tag {
-  display: inline-block;
-  margin-bottom: 14px;
+.news-tag-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
 .news-card h3 {
-  font-family: "Arsenal", "Georgia", serif;
-  font-size: 1.2rem;
+  font-family: var(--font-display);
+  font-size: 1.3125rem;
   margin-bottom: 8px;
   line-height: 1.25;
 }
 
-.news-card p {
-  font-size: 0.92rem;
+.news-authors {
+  font-size: 0.8125rem;
   color: var(--muted);
+  margin: -4px 0 8px;
+}
+
+.news-card p {
+  font-size: 0.9375rem;
+  color: var(--ink-2);
   line-height: 1.5;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -234,106 +220,23 @@
   margin: 0;
 }
 
-/* Home Spotlight Section */
-.spotlight-grid {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.spotlight-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px;
-  transition: border-color 0.22s ease;
-  color: inherit;
-  min-height: 100%;
-}
-
-.spotlight-card:hover {
-  border-color: var(--accent);
-}
-
-.spotlight-card .resource-tag {
-  align-self: flex-start;
-  width: fit-content;
-  margin-bottom: 14px;
-}
-
-.spotlight-card h3 {
-  font-family: "Arsenal", "Georgia", serif;
-  font-size: 1.45rem;
-  margin-bottom: 10px;
-  line-height: 1.2;
-}
-
-.spotlight-card .list-meta {
-  margin-bottom: 14px;
-}
-
-.spotlight-card .list-excerpt {
-  -webkit-line-clamp: 3;
-  flex: 1;
-}
-
-.spotlight-card .read-more {
-  margin-top: 18px;
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-
 .home-empty {
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.9375rem;
   padding: 20px 0;
 }
 
-/* Page Home Overrides (Transparent navigation config) */
-body.page-home .site-header {
-  background: transparent;
-  border-bottom-color: rgba(255, 255, 255, 0.15);
-  box-shadow: none;
-}
-
-body.page-home .brand {
-  color: #fff;
-}
-
-body.page-home .brand:hover {
-  color: var(--sand);
-}
-
-body.page-home .site-nav a {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-body.page-home .site-nav a:hover,
-body.page-home .site-nav a.is-active {
-  color: #fff;
-}
-
-body.page-home .brand-logo {
-  height: 144px;
-}
-
-.page-home .footer-logo {
-  height: 120px;
-}
-
-/* Home Page Media Queries */
-@media (max-width: 720px) {
-  .news-card {
+@media (max-width: 900px) {
+  .home-about {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 32px;
   }
 }
 
-@media (max-width: 760px) {
-  .hero {
-    padding-top: 40px;
+@media (max-width: 720px) {
+  .news-card {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 20px;
   }
 }
